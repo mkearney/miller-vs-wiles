@@ -1,6 +1,6 @@
 # Annotation codebook
 
-Each utterance gets one **function** code and one **target** code: the main thing it does and the main party it is about. If a quote does two things, code the one that drives the sentence.
+Each utterance gets one **function** code, one **target** code and one **stance** code: the main thing it does and the main party it is about. If a quote does two things, code the one that drives the sentence.
 
 ## Function
 
@@ -20,6 +20,18 @@ Each utterance gets one **function** code and one **target** code: the main thin
 ## Target
 
 OPPOSITION (Democrats, the left, protesters, NGOs) · IMMIGRANTS · COURTS · FOREIGN (other states or leaders) · MEDIA · TRUMP · INSIDERS (administration colleagues) · STAFF (subordinates, agents) · PUBLIC (voters) · SELF · NONE
+
+## Stance (brake / accelerator)
+
+Measures the friction a speaker adds to or removes from the principal's agenda.
+
+| Code | Definition | Example |
+|---|---|---|
+| accelerator | Pushes for more executive power, force or enforcement, or for escalation against opponents | "we are looking to set a goal of a minimum of 3,000 arrests for ICE every day" |
+| brake | Signals limits, disagreement, doubt or de-escalation about the principal or a policy | "There have been a couple of times where I've been outvoted." |
+| neutral | Neither | "See you Monday." |
+
+Rhetoric alone (e.g. "Change the voters, change the country") is not an accelerator unless it calls for action or power.
 
 ## Perception (L3) coding: stereotype content model
 

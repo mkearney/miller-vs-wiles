@@ -170,6 +170,39 @@ def shares(df, mask, col):
     return t.sort_values("miller", ascending=False)
 
 
+HEADLINE = [
+    ("Aimed at political out-groups", "target", {"OPPOSITION", "IMMIGRANTS", "FOREIGN", "COURTS"}),
+    ("Attacks or rallies against opponents", "function", {"ATTACK", "MOBILIZE"}),
+    ("Pushes for more power or force", "stance", {"accelerator"}),
+    ("Signals limits or pushback", "stance", {"brake"}),
+    ("Manages, defends or credits the team", "function", {"MANAGE", "LOYALTY", "DEFEND"}),
+    ("About Trump or colleagues", "target", {"TRUMP", "INSIDERS"}),
+]
+
+
+def wilson(k: int, n: int, z: float = 1.96) -> tuple[float, float]:
+    if n == 0:
+        return (float("nan"), float("nan"))
+    p = k / n; d = 1 + z * z / n
+    c = (p + z * z / (2 * n)) / d; h = z * math.sqrt(p * (1 - p) / n + z * z / (4 * n * n)) / d
+    return (c - h, c + h)
+
+
+def headline_indicators(df, mask):
+    """Share of each speaker's usable quotes meeting each indicator, with Wilson 95% CIs."""
+    rows = []
+    sub = df[mask]
+    for label, col, vals in HEADLINE:
+        row = {"indicator": label}
+        for s in SPEAKERS:
+            g = sub[sub.speaker == s]
+            k, n = int(g[col].isin(vals).sum()), len(g)
+            lo, hi = wilson(k, n)
+            row.update({s: k / n, f"{s}_lo": lo, f"{s}_hi": hi, f"{s}_k": k, f"{s}_n": n})
+        rows.append(row)
+    return pd.DataFrame(rows)
+
+
 def perception_summary(per: pd.DataFrame):
     g = per.groupby("subject")[["warmth", "competence", "dominance"]].agg(["mean", "count"])
     by_align = per.groupby(["subject", "alignment"])[["warmth", "competence", "dominance"]].mean().round(2)
@@ -227,7 +260,14 @@ def run(make_figures: bool = True) -> dict:
     register["_n"] = {"public_tokens": int(f.loc[pub_idx, "n_tokens"].sum()), "deposition_tokens": int(fd.n_tokens.sum()),
                       "deposition_answers": int(len(dep))}
 
+    headline = headline_indicators(utt, content)
+    stance = shares(utt, content, "stance")
+    stance_novf = shares(utt, content & ~utt["vanity_fair"], "stance")
+
     results = {
+        "headline_indicators": headline.round(3).to_dict(orient="records"),
+        "stance_shares": stance.round(3).to_dict(),
+        "stance_shares_without_vanity_fair": stance_novf.round(3).to_dict(),
         "corpus": {"by_channel": desc.to_dict(), "by_quote_status": status.to_dict(),
                    "n_total": int(len(utt)), "n_perceptions": int(len(per)),
                    "date_range": {s: [utt[utt.speaker == s].date.min(), utt[utt.speaker == s].date.max()] for s in SPEAKERS}},
@@ -249,7 +289,7 @@ def run(make_figures: bool = True) -> dict:
     (OUT / "results.json").write_text(json.dumps(results, indent=2, default=str))
     if make_figures:
         from .figures import make_all
-        make_all(utt, per, lex, fn, tg, fw, desc)
+        make_all(utt, per, lex, fn, tg, fw, desc, headline)
     return results
 
 

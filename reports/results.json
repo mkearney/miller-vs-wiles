@@ -1,4 +1,108 @@
 {
+  "headline_indicators": [
+    {
+      "indicator": "Aimed at political out-groups",
+      "wiles": 0.0,
+      "wiles_lo": -0.0,
+      "wiles_hi": 0.068,
+      "wiles_k": 0,
+      "wiles_n": 53,
+      "miller": 0.854,
+      "miller_lo": 0.716,
+      "miller_hi": 0.931,
+      "miller_k": 35,
+      "miller_n": 41
+    },
+    {
+      "indicator": "Attacks or rallies against opponents",
+      "wiles": 0.0,
+      "wiles_lo": -0.0,
+      "wiles_hi": 0.068,
+      "wiles_k": 0,
+      "wiles_n": 53,
+      "miller": 0.61,
+      "miller_lo": 0.457,
+      "miller_hi": 0.743,
+      "miller_k": 25,
+      "miller_n": 41
+    },
+    {
+      "indicator": "Pushes for more power or force",
+      "wiles": 0.0,
+      "wiles_lo": -0.0,
+      "wiles_hi": 0.068,
+      "wiles_k": 0,
+      "wiles_n": 53,
+      "miller": 0.39,
+      "miller_lo": 0.257,
+      "miller_hi": 0.543,
+      "miller_k": 16,
+      "miller_n": 41
+    },
+    {
+      "indicator": "Signals limits or pushback",
+      "wiles": 0.17,
+      "wiles_lo": 0.092,
+      "wiles_hi": 0.292,
+      "wiles_k": 9,
+      "wiles_n": 53,
+      "miller": 0.024,
+      "miller_lo": 0.004,
+      "miller_hi": 0.126,
+      "miller_k": 1,
+      "miller_n": 41
+    },
+    {
+      "indicator": "Manages, defends or credits the team",
+      "wiles": 0.415,
+      "wiles_lo": 0.293,
+      "wiles_hi": 0.549,
+      "wiles_k": 22,
+      "wiles_n": 53,
+      "miller": 0.049,
+      "miller_lo": 0.013,
+      "miller_hi": 0.161,
+      "miller_k": 2,
+      "miller_n": 41
+    },
+    {
+      "indicator": "About Trump or colleagues",
+      "wiles": 0.566,
+      "wiles_lo": 0.433,
+      "wiles_hi": 0.69,
+      "wiles_k": 30,
+      "wiles_n": 53,
+      "miller": 0.0,
+      "miller_lo": 0.0,
+      "miller_hi": 0.086,
+      "miller_k": 0,
+      "miller_n": 41
+    }
+  ],
+  "stance_shares": {
+    "wiles": {
+      "neutral": 0.83,
+      "accelerator": 0.0,
+      "brake": 0.17
+    },
+    "miller": {
+      "neutral": 0.585,
+      "accelerator": 0.39,
+      "brake": 0.024
+    }
+  },
+  "stance_shares_without_vanity_fair": {
+    "wiles": {
+      "neutral": 1.0,
+      "accelerator": 0.0,
+      "brake": 0.0
+    },
+    "miller": {
+      "neutral": 0.585,
+      "accelerator": 0.39,
+      "brake": 0.024
+    }
+  },
   "corpus": {
     "by_channel": {
       "wiles": {
@@ -583,12 +687,6 @@
   },
   "fightin_words": [
     {
-      "word": "house",
-      "z": -1.347,
-      "n_wiles": 3,
-      "n_miller": 0
-    },
-    {
       "word": "am",
       "z": -1.347,
       "n_wiles": 3,
@@ -601,19 +699,13 @@
       "n_miller": 0
     },
     {
-      "word": "again",
-      "z": -1.098,
-      "n_wiles": 2,
+      "word": "house",
+      "z": -1.347,
+      "n_wiles": 3,
       "n_miller": 0
     },
     {
-      "word": "he's",
-      "z": -1.098,
-      "n_wiles": 2,
-      "n_miller": 0
-    },
-    {
-      "word": "campaign",
+      "word": "staff",
       "z": -1.098,
       "n_wiles": 2,
       "n_miller": 0
@@ -625,7 +717,7 @@
       "n_miller": 0
     },
     {
-      "word": "work",
+      "word": "campaign",
       "z": -1.098,
       "n_wiles": 2,
       "n_miller": 0
@@ -637,13 +729,13 @@
       "n_miller": 0
     },
     {
-      "word": "staff",
+      "word": "again",
       "z": -1.098,
       "n_wiles": 2,
       "n_miller": 0
     },
     {
-      "word": "doctors",
+      "word": "work",
       "z": -1.098,
       "n_wiles": 2,
       "n_miller": 0
@@ -655,19 +747,25 @@
       "n_miller": 0
     },
     {
-      "word": "change",
+      "word": "he's",
+      "z": -1.098,
+      "n_wiles": 2,
+      "n_miller": 0
+    },
+    {
+      "word": "doctors",
+      "z": -1.098,
+      "n_wiles": 2,
+      "n_miller": 0
+    },
+    {
+      "word": "need",
       "z": 1.008,
       "n_wiles": 0,
       "n_miller": 2
     },
     {
-      "word": "americans",
-      "z": 1.008,
-      "n_wiles": 0,
-      "n_miller": 2
-    },
-    {
-      "word": "nyc",
+      "word": "looking",
       "z": 1.008,
       "n_wiles": 0,
       "n_miller": 2
@@ -677,6 +775,36 @@
       "z": 1.008,
       "n_wiles": 0,
       "n_miller": 2
+    },
+    {
+      "word": "terrorism",
+      "z": 1.008,
+      "n_wiles": 0,
+      "n_miller": 2
+    },
+    {
+      "word": "governed",
+      "z": 1.236,
+      "n_wiles": 0,
+      "n_miller": 3
+    },
+    {
+      "word": "federal",
+      "z": 1.236,
+      "n_wiles": 0,
+      "n_miller": 3
+    },
+    {
+      "word": "language",
+      "z": 1.236,
+      "n_wiles": 0,
+      "n_miller": 3
+    },
+    {
+      "word": "country",
+      "z": 1.236,
+      "n_wiles": 0,
+      "n_miller": 3
     },
     {
       "word": "world",
@@ -691,37 +819,13 @@
       "n_miller": 3
     },
     {
-      "word": "language",
-      "z": 1.236,
-      "n_wiles": 0,
-      "n_miller": 3
-    },
-    {
-      "word": "federal",
-      "z": 1.236,
-      "n_wiles": 0,
-      "n_miller": 3
-    },
-    {
-      "word": "country",
-      "z": 1.236,
-      "n_wiles": 0,
-      "n_miller": 3
-    },
-    {
-      "word": "governed",
-      "z": 1.236,
-      "n_wiles": 0,
-      "n_miller": 3
-    },
-    {
-      "word": "insurrection",
+      "word": "domestic",
       "z": 1.43,
       "n_wiles": 0,
       "n_miller": 4
     },
     {
-      "word": "domestic",
+      "word": "insurrection",
       "z": 1.43,
       "n_wiles": 0,
       "n_miller": 4

@@ -80,7 +80,7 @@ discover → fetch → normalize → dedupe → attribute → verify → enrich 
 | Threat & securitization | threat lexicon | supervised classifier trained on the codebook |
 | Power motive | power lexicon | Winter running-text motive scoring (LLM-assisted, human-validated) |
 | Populism | — | Hawkins holistic grading; Rooduijn & Pauwels dictionary |
-| Rhetorical function & target | single-coder codebook (Claude in this session) | LLM coding + 2 human coders on a 20% gold set, Krippendorff's α ≥ 0.7 |
+| Rhetorical function, target & stance | single-coder codebook (Claude in this session) | LLM coding + 2 human coders on a 20% gold set, Krippendorff's α ≥ 0.7 |
 | Issue agenda | targets | Comparative Agendas Project codes; BERTopic |
 | Semantic position | — | sentence embeddings; distance to a Trump reference corpus ("who sounds more like the boss") |
 | Persona | SCM warmth/competence/dominance, hand-coded | LLM-coded at scale, split by outlet alignment |
@@ -114,11 +114,12 @@ search tool worked. So v1 consists of:
 **v2 additions** (via GitHub, which this sandbox can reach):
 - **WTFJHT** daily digests, run through a rule-based extractor and hand-reviewed.
 - **Miller's Jan. 6 Committee deposition**: 450 answers, used as a register check.
-- **Voteview DW-NOMINATE** mirrors and **congresstweets**, used to estimate DW-NOMINATE for both people (`src/mvw/nominate.py`). Two methods:
+- **Voteview** mirrors and **congresstweets**, used to estimate each person's **ideal point** (left–right position), reported on the DW-NOMINATE scale (`src/mvw/ideal_points.py`). Two methods:
   - *Text scaling*, validated out of sample with a k-text calibration.
   - *Employer bridge*: the scores of the legislators and presidents each person worked for.
 
-DW-NOMINATE is defined only for people who cast roll-call votes, so these are placements on the scale, not true scores.
+DW-NOMINATE itself is defined only for people who cast roll-call votes, so these are ideal-point estimates placed on its scale, not DW-NOMINATE scores. The standard ideal-point methods for non-legislators are Bonica's campaign-finance CFscores (DIME) and Barberá's Twitter follower-network model. Both are recommended for v3; neither data source is reachable from the build sandbox.
+- **Stance coding** (brake / accelerator / neutral), added so the main claim, "same agenda, different friction," can be measured. See `CODEBOOK.md`.
 
 **Treat v1/v2 as a working prototype on a small, press-filtered quote sample.** The code
 is built to take the v2 corpus without changes to the analysis layer.

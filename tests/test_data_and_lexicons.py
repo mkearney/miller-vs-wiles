@@ -7,7 +7,7 @@ sys.path.insert(0, str(ROOT / "src"))
 
 from mvw.lexicons import count_phrases, tokenize  # noqa: E402
 
-REQUIRED = {"id", "speaker", "date", "text", "channel", "quote_status", "function", "target", "source_url"}
+REQUIRED = {"id", "speaker", "date", "text", "channel", "quote_status", "function", "target", "stance", "source_url"}
 STATUSES = {"full", "fragment", "stitched", "paraphrase", "third_party_report"}
 
 
@@ -24,6 +24,7 @@ def test_utterance_schema():
         assert r["speaker"] in {"wiles", "miller"}
         assert r["quote_status"] in STATUSES
         assert r["source_url"].startswith("https://")
+        assert r["stance"] in {"accelerator", "brake", "neutral"}
 
 
 def test_perception_scale():

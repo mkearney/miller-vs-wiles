@@ -1,7 +1,10 @@
-"""Estimate where Wiles and Miller would sit on the DW-NOMINATE first dimension.
+"""Ideal-point estimates for Wiles and Miller, expressed on the DW-NOMINATE scale.
 
-DW-NOMINATE is estimated from congressional roll-call votes. Neither Wiles nor Miller
-has ever cast one, so neither has a true score. We triangulate three ways:
+An ideal point is a person's estimated left-right position, inferred from their choices.
+DW-NOMINATE is the ideal-point model for roll-call votes; neither Wiles nor Miller has
+cast one, so we estimate their ideal points other ways and report them on the
+DW-NOMINATE first-dimension scale (-1 liberal ... +1 conservative) so they can be
+compared with members of Congress and with Trump:
 
 1. Text scaling: a ridge model trained to predict legislators' DW-NOMINATE dim1 from
    their tweets (congresstweets, 117th + 118th Congress), applied to each person's
@@ -11,7 +14,7 @@ has ever cast one, so neither has a true score. We triangulate three ways:
 2. Employer bridge: DW-NOMINATE of the legislators/presidents each person worked for.
 3. Trump anchor: Voteview's DW-NOMINATE for Trump's presidential positions.
 
-Run:  python -m mvw.nominate <congresstweets_data_dir>
+Run:  python -m mvw.ideal_points <congresstweets_data_dir>
 Get training data:  git clone --depth 1 --filter=blob:none --sparse \
         https://github.com/alexlitel/congresstweets <dir> && cd <dir> && \
         git sparse-checkout set --no-cone '/data/2021-0[4-6]-*' '/data/2023-0[1-3]-*.json'
@@ -196,7 +199,7 @@ def run(tweets_dir: str) -> dict:
         sub = usable[usable.speaker == spk]
         for (_, r), p in zip(sub.iterrows(), model.predict([clean(t) for t in sub.text])):
             per_quote.append({"speaker": spk, "id": r["id"], "text": r["text"], "raw_pred": float(p)})
-    pd.DataFrame(per_quote).sort_values("raw_pred").to_csv(ROOT / "reports" / "nominate_per_quote.csv", index=False)
+    pd.DataFrame(per_quote).sort_values("raw_pred").to_csv(ROOT / "reports" / "ideal_points_per_quote.csv", index=False)
 
     party_means = vv[(vv.congress == 118) & vv.party_code.isin([100, 200])].groupby("party_code").nominate_dim1.agg(["mean", "std"])
     out = {
@@ -207,8 +210,8 @@ def run(tweets_dir: str) -> dict:
                       "house_senate_D_mean_118": float(party_means.loc[100, "mean"])},
     }
     (ROOT / "reports").mkdir(exist_ok=True)
-    (ROOT / "reports" / "nominate.json").write_text(json.dumps(out, indent=2))
-    mem.to_csv(ROOT / "reports" / "nominate_legislator_validation.csv")
+    (ROOT / "reports" / "ideal_points.json").write_text(json.dumps(out, indent=2))
+    mem.to_csv(ROOT / "reports" / "ideal_points_validation.csv")
     return out
 
 

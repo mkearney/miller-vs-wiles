@@ -119,7 +119,7 @@ def corpus(desc):
     _save(fig, "corpus_channels.png")
 
 
-def make_all(utt, per, lex, fn, tg, fw, desc):
+def make_all(utt, per, lex, fn, tg, fw, desc, headline=None):
     FIG.mkdir(parents=True, exist_ok=True)
     plt.rcParams["font.family"] = "DejaVu Sans"
     lexicon_dotplot(lex)
@@ -128,25 +128,27 @@ def make_all(utt, per, lex, fn, tg, fw, desc):
     fightin(fw)
     perception(per)
     corpus(desc)
-    nominate_chart()
+    ideal_point_chart()
+    if headline is not None:
+        headline_chart(headline)
 
 
-def nominate_chart(path=None):
-    """Triangulated DW-NOMINATE dim1 placements with reference lines."""
+def ideal_point_chart(path=None):
+    """Ideal-point estimates on the DW-NOMINATE scale, with reference lines."""
     import json
-    p = Path(path or FIG.parent / "nominate.json")
+    p = Path(path or FIG.parent / "ideal_points.json")
     if not p.exists():
         return
     r = json.loads(p.read_text())
     s, ref = r["scores"], r["reference"]
     pr = {k: [x["dw_nominate_dim1"] for x in r["principals"] if x["person"] == k] for k in ("wiles", "miller")}
     rows = [  # (label, person, point, lo, hi)
-        ("Text scaling\nall quotes", "wiles", s["wiles_all"]["estimate"], *s["wiles_all"]["pi95"]),
-        ("Text scaling\nall quotes", "miller", s["miller_all"]["estimate"], *s["miller_all"]["pi95"]),
+        ("Employer bridge (preferred)\nmean of bosses, range", "wiles", float(np.mean(pr["wiles"])), min(pr["wiles"]), max(pr["wiles"])),
+        ("Employer bridge (preferred)\nmean of bosses, range", "miller", float(np.mean(pr["miller"])), min(pr["miller"]), max(pr["miller"])),
+        ("Text scaling (lower bound)\nall quotes", "wiles", s["wiles_all"]["estimate"], *s["wiles_all"]["pi95"]),
+        ("Text scaling (lower bound)\nall quotes", "miller", s["miller_all"]["estimate"], *s["miller_all"]["pi95"]),
         ("Text scaling\nWiles w/o Vanity Fair;\nMiller deposition", "wiles", s["wiles_excl_vanity_fair"]["estimate"], *s["wiles_excl_vanity_fair"]["pi95"]),
         ("Text scaling\nWiles w/o Vanity Fair;\nMiller deposition", "miller", s["miller_deposition_2022 (200 answers)"]["estimate"], *s["miller_deposition_2022 (200 answers)"]["pi95"]),
-        ("Employer bridge\n(mean, range)", "wiles", float(np.mean(pr["wiles"])), min(pr["wiles"]), max(pr["wiles"])),
-        ("Employer bridge\n(mean, range)", "miller", float(np.mean(pr["miller"])), min(pr["miller"]), max(pr["miller"])),
     ]
     labels = list(dict.fromkeys(r_[0] for r_ in rows))
     fig, ax = plt.subplots(figsize=(7.5, 4.2))
@@ -165,6 +167,23 @@ def nominate_chart(path=None):
     ax.set_yticks(range(len(labels)), labels[::-1])
     ax.set_xlim(-0.6, 1.0)
     ax.set_ylim(-0.6, len(labels) - 0.2)
-    _style(ax, "Estimated DW-NOMINATE", "← liberal      conservative →   (bars: 95% prediction interval / range)")
+    _style(ax, "Left–right position (ideal points, DW-NOMINATE scale)", "← liberal      conservative →   (bars: 95% prediction interval / range)")
     ax.legend(frameon=True, facecolor=SURF, edgecolor=SURF, framealpha=1, fontsize=9, labelcolor=INK2, loc="lower left")
-    _save(fig, "dw_nominate.png")
+    _save(fig, "ideal_points.png")
+
+
+def headline_chart(h):
+    """The one-glance comparison: share of quotes meeting each indicator, Wilson 95% CIs."""
+    d = h.iloc[::-1].reset_index(drop=True)
+    y = np.arange(len(d)); off = 0.17
+    fig, ax = plt.subplots(figsize=(7.5, 4.4))
+    for s, o in [("wiles", off), ("miller", -off)]:
+        ax.barh(y + o, d[s] * 100, height=0.3, color=COLOR[s], label=LABEL[s])
+        ax.hlines(y + o, d[f"{s}_lo"] * 100, d[f"{s}_hi"] * 100, color=INK2, linewidth=1)
+        for yi, v, hi in zip(y + o, d[s] * 100, d[f"{s}_hi"] * 100):
+            ax.text(max(v, hi) + 1.2, yi, f"{v:.0f}%", va="center", ha="left", fontsize=8, color=INK2)
+    ax.set_yticks(y, d.indicator)
+    ax.set_xlim(0, 105)
+    _style(ax, "Same agenda, different job", "% of each speaker's quotes (lines: 95% CI)")
+    _legend(ax)
+    _save(fig, "headline.png")

@@ -1,37 +1,44 @@
 # miller-vs-wiles
 
-Comparing the public communication of **Susie Wiles** and **Stephen Miller**. Trump named Miller to replace Wiles as White House Chief of Staff on Nov 6, 2026 (effective Nov 9).
+How do **Susie Wiles** and **Stephen Miller** compare as communicators? Trump named Miller to replace Wiles as White House Chief of Staff on Nov 6, 2026 (effective Nov 9).
 
-**Headline (v2):** Both sit in the same place on the DW-NOMINATE left–right scale (≈ +0.55, mainstream Republican; neither has roll-call votes, so this is estimated). Where they differ is communication role: Wiles's public words point *inward*, at Trump, staff and process, while Miller's point *outward*, at opponents, immigrants, courts and foreign states. Under oath, Miller sounds much more like Wiles, so part of the gap is the register he uses on public stages.
-→ [reports/REPORT.md](reports/REPORT.md)
+## Finding: same agenda, different friction
+
+- **Same ideology.** Both are mainstream Republicans (≈ +0.55 on the DW-NOMINATE scale, estimated as ideal points because neither has roll-call votes). Both are loyal to Trump, and Miller's agenda was already White House policy.
+- **Different job.** Wiles's public words point inward: managing staff, defending the team, and (on the record) pushing back on Trump. Miller's point outward: attacking opponents and pushing for more power and force.
+- **What changes on Nov 9** is the internal friction, not the direction. The policy accelerator now also runs the process.
+
+→ **[Read the report](reports/REPORT.md)**
+
+![headline](reports/figures/headline.png)
 
 ## Repo layout
 
 | Path | What |
 |---|---|
-| `docs/METHODOLOGY.md` | The full analysis design: corpus layers, sources, pipeline, measures, inference, ethics, v1 limits |
-| `docs/CODEBOOK.md` | Function / target / perception coding rules |
-| `data/utterances.jsonl` | 99 attributed quotes with channel, audience, quote status, codes, source URL |
-| `data/perceptions.jsonl` | 43 third-party descriptors coded for warmth / competence / dominance |
+| `reports/REPORT.md` | Findings, rated by strength of evidence, plus the post–Nov 9 watch list |
+| `docs/METHODOLOGY.md` | Full design: corpus layers, sources, measures, inference, ethics, limits |
+| `docs/CODEBOOK.md` | Coding rules for function, target, stance (brake/accelerator) and perception |
+| `data/utterances.jsonl` | 99 attributed quotes with channel, audience, quote status, codes and source URL |
+| `data/perceptions.jsonl` | 43 descriptions of them by others, coded for warmth, competence and dominance |
 | `data/miller_deposition_2022.jsonl` | 450 answers from Miller's Jan. 6 Committee deposition (register check) |
-| `data/external/` | Voteview DW-NOMINATE (95th–119th Congress) and legislator Twitter handles |
-| `src/mvw/nominate.py` | DW-NOMINATE estimates: text scaling trained on congressional tweets, plus employer bridge |
-| `src/mvw/` | Lexicons, features, statistics (bootstrap, permutation, FDR, log-odds, LOO classifier), figures |
+| `data/external/` | Voteview scores (95th–119th Congress) and legislator Twitter handles |
+| `src/mvw/analysis.py` | Features, headline indicators, bootstrap/permutation tests with FDR, figures |
+| `src/mvw/ideal_points.py` | Ideal points: text scaling on congressional tweets, plus employer bridge |
 | `collect/` | WTFJHT quote extractor, deposition parser, GDELT discovery script |
-| `reports/` | `REPORT.md`, `results.json`, figures |
 
 ## Run
 
 ```bash
-pip install pandas numpy scipy scikit-learn vaderSentiment matplotlib pytest
-# DW-NOMINATE text model (needs congressional tweets; ~1 min)
+pip install pandas numpy scipy scikit-learn vaderSentiment matplotlib pyyaml pytest
+# Ideal-point text model (needs congressional tweets; ~1 min)
 git clone --depth 1 --filter=blob:none --sparse https://github.com/alexlitel/congresstweets /tmp/ct
 (cd /tmp/ct && git sparse-checkout set --no-cone '/data/2021-0[4-6]-*' '/data/2023-0[1-3]-*.json')
-cd src && python -m mvw.nominate /tmp/ct/data && cd ..
-python run.py          # ~3 min (permutation tests); writes reports/results.json + figures
+cd src && python -m mvw.ideal_points /tmp/ct/data && cd ..
+python run.py   # ~3 min; writes reports/results.json and figures
 pytest -q
 ```
 
-## Status
+## Caveats
 
-v2 adds GitHub-hosted sources (Voteview mirrors, congresstweets, Jan. 6 transcripts, the WTFJHT news digest) because the build session's network blocks news sites and archives directly. Each quote has a source URL but needs checking against the original wording. The full design, including what more network access would unlock, is in `docs/METHODOLOGY.md`.
+The quote sample is small and press-filtered, and Wiles is genuinely low-output. Each quote has a source URL but should be checked against the original. One AI coder did all the coding. The build session couldn't reach news sites or archives directly, so sources came via web search and GitHub mirrors. Details are in the report's limitations section.

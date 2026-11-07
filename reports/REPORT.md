@@ -1,152 +1,140 @@
-# Wiles vs. Miller: what their public words show (v2)
+# Wiles vs. Miller: same agenda, different friction
 
-*Corpus: 99 attributed quotes (55 Wiles, 44 Miller), 43 third-party descriptions, and Miller's
-full Jan. 6 Committee deposition (450 answers, ~26,000 words). Coverage runs from 2018 to Nov 6, 2026.
-Read "Data access and limitations" before citing numbers.*
+*Stephen Miller replaces Susie Wiles as White House Chief of Staff on Nov 9, 2026.
+This report compares them from 99 attributed public quotes (55 Wiles, 44 Miller), 43 descriptions of
+them by others, and Miller's 450-answer Jan. 6 Committee deposition.*
 
-## Bottom line
+## The short answer
 
-1. **On left–right ideology they look the same.** Every method places both of them on the DW-NOMINATE scale at roughly mainstream-Republican level, between Trump (+0.40) and the average congressional Republican (+0.51). The employer bridge gives Wiles +0.55 and Miller +0.57; text scaling gives Wiles +0.24 and Miller +0.31, with overlapping intervals. **No method can tell them apart.**
-2. **On communication role they barely overlap.** Wiles's quotes point *inward*: at Trump, colleagues, staff and process. Miller's point *outward*: at opponents, immigrants, courts and foreign states. In this sample, 95% of Miller's quotes attack, assert power, mobilize, or announce enforcement goals. None of Wiles's do.
-3. **Part of that gap is the stage, not just the person.** Under oath, Miller talks a lot like Wiles: first-person, hedged, with no threat language. But where the two spoke at the *same* event (the Charlie Kirk memorial), Wiles gave credit ("That was Charlie's army") and Miller attacked ("You are nothing"). The difference is how each uses public platforms, not a fixed verbal tic.
+The easy take is that Miller is the hardliner and Wiles the quiet moderate. On **ideology**, that's wrong. Both sit at the same mainstream-Republican position, they worked for the same kind of politicians, and both are loyal to Trump. Miller's immigration agenda was already White House policy under Wiles, and it stays.
 
-What separates them, then, is **a combative register versus a managerial one, not a left–right position**. DW-NOMINATE is built to measure left–right position, so it is the wrong instrument for the difference that matters here.
+What changes is **the job being done at the top of the staff**. Wiles's public words are about running the building: managing staff, defending the team, and (on the record) pushing back on Trump. Miller's are about fighting opponents and expanding power. **The agenda doesn't change; the internal friction does.** The person who most often pushed for more power and force now also controls what reaches the president.
+
+![headline](figures/headline.png)
+
+## Four findings, rated by strength of evidence
+
+| # | Finding | Evidence | Why that rating |
+|---|---|---|---|
+| 1 | **Same left–right position.** Both are mainstream Republicans, at about +0.55 on the DW-NOMINATE scale. | **Moderate** | Two independent methods agree, but neither person has roll-call votes, so it has to be estimated |
+| 2 | **Different job.** Wiles points inward (Trump, staff, colleagues); Miller points outward (opponents, immigrants, courts, foreign states). | **Strong** | Very large gaps (0% vs 85% aimed at political out-groups) that survive dropping Wiles's biggest source |
+| 3 | **Wiles brakes, Miller accelerates.** 17% of Wiles's quotes signal limits or pushback, against 2% of Miller's. 39% of Miller's push for more power or force, against 0% of Wiles's. | **Moderate for Miller, weak for Wiles** | Miller's accelerator pattern appears across venues. *Every* Wiles brake quote comes from one source (Vanity Fair), backed by third-party reports, and whether her brake actually worked is unproven |
+| 4 | **Miller's public voice is partly a chosen register.** Under oath he sounds much more like Wiles. | **Moderate** | Strong contrast, but the deposition is from 2022 and in a legal setting |
 
 ---
 
-## 1. Estimated DW-NOMINATE
+## 1. Ideology: the same
 
-![dw](figures/dw_nominate.png)
+![ideal points](figures/ideal_points.png)
 
-DW-NOMINATE scores members of Congress from their roll-call votes. **Neither Wiles nor Miller has ever cast one**, so neither has a true score. These are estimates on that scale, built three ways:
+These are **ideal-point estimates**: each person's left–right position inferred from evidence, shown on the DW-NOMINATE scale (−1 liberal to +1 conservative) so they can be compared with members of Congress. Neither person has a true DW-NOMINATE score, because that requires congressional roll-call votes.
 
-| Method | Wiles | Miller | What it measures |
-|---|---|---|---|
-| **Employer bridge** (mean of principals' scores) | **+0.55** (range 0.30–0.69) | **+0.57** (range 0.40–0.75) | The ideology of the politicians each chose to work for |
-| …post-2009 principals only | +0.58 | +0.57 | Excludes Wiles's 1979–80 jobs with Kemp and Reagan |
-| **Text scaling**: all quotes | +0.24 (95% PI −0.08 to 0.55) | +0.31 (95% PI −0.01 to 0.63) | How much their words resemble Republican vs. Democratic legislators' tweets |
-| Text scaling: Wiles without Vanity Fair / Miller deposition | +0.15 | +0.09 | Same model, different subsets |
-| *Reference: Trump (Voteview presidential score)* | +0.40 | +0.40 | |
-| *Reference: avg Republican / Democrat in Congress, 118th* | +0.51 / −0.38 | | |
+| Method | Wiles | Miller |
+|---|---|---|
+| **Employer bridge** (preferred): average score of the politicians they worked for | **+0.55** (range 0.30–0.69) | **+0.57** (range 0.40–0.75) |
+| Text scaling (lower bound): how much their words resemble Republican vs. Democratic legislators' tweets | +0.24 (95% PI −0.08 to 0.55) | +0.31 (95% PI −0.01 to 0.63) |
+| *For comparison* | Trump +0.40 · average congressional Republican +0.51 · average Democrat −0.38 | |
 
-**Principals used for the employer bridge:**
-- **Miller:** Rep. Bachmann (+0.58), Rep. Shadegg (+0.75), Sen. Sessions (+0.55), Trump (+0.40).
-- **Wiles:** Rep. Kemp (+0.30), Reagan (+0.69), Rick Scott (+0.67, from his later Senate record), DeSantis (+0.66, from his House record), Trump (+0.40).
+**Who they worked for:**
+- **Wiles:** Rep. Kemp +0.30, Reagan +0.69, Rick Scott +0.67, DeSantis +0.66, Trump +0.40.
+- **Miller:** Rep. Bachmann +0.58, Rep. Shadegg +0.75, Sen. Sessions +0.55, Trump +0.40.
 
-**How the text model was built and checked.** It is a ridge regression on word and phrase features, trained on 81,365 tweets from 395 legislators in the 117th and 118th Congresses. It was tested out of sample: the model never saw a legislator's tweets during training before predicting that legislator's score.
-- From a legislator's full tweet set, it recovers DW-NOMINATE at r = 0.95.
-- From just **26–53 tweets** (the amount of text we have for Wiles and Miller), it recovers r = 0.94 and puts 98.8% of legislators on the correct side of zero. The 95% prediction interval is about ±0.31.
+Counting only post-2009 bosses, they come out identical: +0.58 vs +0.57.
 
-**Why the text estimates read low:** the model has a known bias on this material. It learned the vocabulary of congressional tweets, and its errors show it:
-- "Deport the invaders, or surrender to insurrection" scores *left*, because in 2021 "insurrection" was mostly Democratic vocabulary about Jan. 6.
-- Words like "hate" and "violence" load left, even when Miller uses them to accuse the left.
-- Miller's careful legal testimony scores near the center (+0.09).
+**Why text scaling is only a lower bound.** The model was trained on 81,365 congressional tweets. Tested on legislators it hadn't seen, it recovers their real scores from just 26–53 tweets each (r = 0.94). But it misreads this material:
+- "Deport the invaders, or surrender to insurrection" scores *liberal*, because "insurrection" was mostly Democratic vocabulary about Jan. 6.
+- It can't tell who is accusing whom when Miller uses words like "hate" and "violence."
+- Calm registers such as testimony and management talk look centrist.
 
-In short, the model can't tell who is accusing whom, and it treats non-partisan registers (management talk, testimony) as centrist. **I'd treat the employer bridge as the better estimate and text scaling as a lower bound.** Per-quote scores are in `reports/nominate_per_quote.csv`.
-
-## 2. What each quote is doing
+## 2. Job: inward manager vs. outward combatant
 
 ![functions](figures/functions.png)
-
-| Function | Wiles (n=53) | Miller (n=41) |
-|---|---|---|
-| Attack / Power / Mobilize / Policy | **0%** | **95%** |
-| Candor (evaluating insiders or Trump) | 42% | 0% |
-| Loyalty, Defend, Manage | 42% | 5% |
-| Personal, Strategy | 17% | 0% |
-
-**Without Vanity Fair** (27 of Wiles's 55 quotes come from that one profile), her mix is Loyalty 31%, Manage 23%, Personal 19%, Strategy 15%, Defend 12%. There is still **zero** attack or power language.
-
-## 3. Who each quote is about
-
 ![targets](figures/targets.png)
 
-- **Miller:** opposition 46%, immigrants 17%, foreign states 12%, courts 10%. That is 85% external.
-- **Wiles:** Trump 36%, insiders 21%, self 15%, media 9%, staff 8%. That is 0% external, apart from the press.
+- **Wiles:** 57% of her quotes are about Trump or colleagues, and 42% manage, defend or credit the team. *None* attack anyone, assert power, or target an out-group. Her only adversary is the press. Without Vanity Fair, the pattern holds: still zero attack or power quotes.
+- **Miller:** 85% of his quotes are aimed at political out-groups (opposition 46%, immigrants 17%, foreign states 12%, courts 10%), and 61% attack or rally against opponents.
 
-## 4. Vocabulary and voice
+**Vocabulary** (per 100 words, FDR-corrected): threat words 0.0 vs 5.4, power words 0.0 vs 5.0, management words 4.4 vs 0.4. Wiles says "I" at 7.0 per 100 words, Miller at 0.8. Wiles speaks as an individual reporting on her boss; Miller speaks as "we" against "you" and "they."
 
 ![lexicon](figures/lexicon_rates.png)
 
-| per 100 words | Wiles | Miller | FDR q | Holds without Vanity Fair? |
-|---|---|---|---|---|
-| Threat / enemy | 0.0 | 5.4 | .002 | yes |
-| Power / force | 0.0 | 5.0 | .002 | yes |
-| Management / process | 4.4 | 0.4 | .003 | yes (stronger) |
-| Hedging | 2.0 | 0.4 | .02 | weaker (q = .14) |
-| Character evaluation | 2.4 | 0.4 | .02 | **no**: it comes entirely from Vanity Fair |
-| Affiliation / warmth | 2.0 | 0.0 | .06 | yes (q = .01) |
-| Nation / belonging | 0.9 | 3.3 | .06 | no |
-| Sacred / moral | 0.2 | 1.9 | .07 | no |
-| Certainty | 3.1 | 2.3 | n.s. | |
-| **"I / me / my"** (full sentences) | **7.0** | **0.8** | .002 | |
-| "he / him" (usually Trump) | 2.7 | 0.5 | .12 | |
-| "we" / "you" / "they" | 1.6 / 0.8 / 0.4 | 3.8 / 4.3 / 1.8 | .29 | |
+## 3. Friction: who brakes, who accelerates
 
-Their sentence lengths are similar (11.7 vs 10.2 words), and Miller's tone is more negative (VADER +0.05 vs −0.11). A character n-gram authorship classifier now beats chance, though only barely (balanced accuracy 0.60 against a null 95th percentile of 0.59, p = 0.04).
+**Miller, accelerator (39% of quotes), across venues:**
+- habeas corpus suspension "actively looking at"
+- the president "has plenary authority"
+- a "minimum of 3,000 arrests for ICE every day"
+- "identify, disrupt, dismantle, and destroy"
+- the world is "governed by strength… force… power"
+- "The president was clear: green light"
 
-## 5. Register check: Miller under oath versus Miller in public
+**Wiles, brake (17% of quotes), all from her Vanity Fair interviews:**
+- a "loose agreement that the score settling will end before the first 90 days are over"
+- "a couple of times where I've been outvoted"
+- tariffs "more painful than I expected"
+- "there is no evidence" for Trump's Clinton–Epstein claim
+- "aghast" at the dismantling of USAID
 
-| per 100 words | Miller public (515 words) | Miller deposition (26,306 words) | Wiles public |
+**Third-party reports point the same way.** Wiles worried that Trump was getting "a rose-colored view" of the Iran war (Time). When Miller pushed to suspend habeas corpus, the White House lawyer's memo warning that only Congress can do that went to **Wiles** (NYT, June 2026).
+
+**The counterpoint, which matters:** Trump did the Jan. 6 pardons and the tariffs anyway, and Wiles herself said "if there's a tie, he wins." Her brake signals also come from a profile she may have given partly to shape her legacy. **The case that she *was positioned* as a brake is decent. The case that the brake *worked* is weak.** If it rarely worked, the practical change on Nov 9 is smaller than the rhetorical gap suggests.
+
+## 4. Register: Miller under oath
+
+| per 100 words | Miller in public | Miller under oath (26,306 words) | Wiles in public |
 |---|---|---|---|
 | "I / me / my" | 0.6 | **6.7** | 7.0 |
-| Hedging | 0.4 | **1.2** | 2.0 |
-| Certainty | 2.3 | 0.7 | 3.1 |
-| Threat / enemy | 5.4 | **0.0** | 0.0 |
-| Power / force | 5.0 | **0.0** | 0.0 |
-| "we" | 3.1 | 0.7 | 1.6 |
-| Negation | 1.0 | 3.0 | 1.9 |
+| Hedging | 0.4 | 1.2 | 2.0 |
+| Threat / power words | 10.4 | **0.0** | 0.0 |
 
-In a setting where he is legally accountable and not performing for an audience, Miller's pronoun and stance profile sits much closer to Wiles's. This is the strongest caveat on the comparison: **much of "Miller's voice" is a register he chooses for public stages.** The Kirk memorial is the cleanest same-venue test we have:
+The firebrand voice is a choice, not the only way he talks. But at the one event where both spoke, the Charlie Kirk memorial (Sept 21, 2025), they still chose differently:
+- **Wiles:** "That was Charlie's army, and he made sure they understood what was at stake."
+- **Miller:** "You are nothing. You are wickedness, you are jealousy, you are envy, you are hatred."
 
-| Kirk memorial, Sept 21, 2025 | |
-|---|---|
-| **Wiles** | "That was Charlie's army, and he made sure they understood what was at stake." · "the most powerful youth movement in our time" |
-| **Miller** | "You are nothing. You are wickedness, you are jealousy, you are envy, you are hatred." · "You thought you could kill Charlie Kirk? You have made him immortal!" |
-
-## 6. Distinctive words
-
-![words](figures/distinctive_words.png)
-
-Miller's most distinctive words are *insurrection, domestic, governed, dismantle, federal, country, language, world*. Wiles's are *White House, staff, campaign, work, doctors, cancer, again*. The effects are small (|z| ≤ 1.4), so treat this chart as illustration.
-
-## 7. How others describe them
+## 5. How others see them
 
 ![perception](figures/perception_scm.png)
 
-| Mean (−1…+1) | Warmth | Competence | Dominance |
-|---|---|---|---|
-| Wiles, all (n=22) | +0.27 | +0.55 | −0.05 |
-| Miller, all (n=21) | −0.52 | +0.19 | +0.67 |
-| Wiles, neutral reporters | 0.00 | +0.71 | −0.29 |
-| Miller, neutral reporters | −0.67 | +0.33 | +0.78 |
-| Wiles, critics | −0.20 | −0.20 | 0.00 |
-| Miller, critics | −0.88 | −0.25 | +0.88 |
+Allies describe both as loyal and effective. Neutral reporters split them:
+- **Wiles:** competent and low-key (warmth 0.00, competence +0.71, dominance −0.29).
+- **Miller:** cold and dominant (warmth −0.67, competence +0.33, dominance +0.78).
 
-## 8. What to watch now that Miller is Chief of Staff
-
-1. **More public-facing:** the chief of staff's public output (posts and TV appearances per week) rises sharply compared with Wiles.
-2. **The register persists:** the ATTACK/POWER share of Miller's output stays above 80% after Nov 9.
-3. **Fewer brake signals:** fewer on-record or leaked signs of internal restraint coming from the chief of staff's office. Wiles's signals included the 90-day limit on score-settling, "a couple of times where I've been outvoted," and tariffs being "more painful than I expected."
-4. **No change in ideology:** DW-NOMINATE-type placements shouldn't move. The change is in governing style, not left–right position.
+Inside the building, people say staff "will take a bullet for Susie." Accounts of Miller describe a "wartime general" who shouts at staff and an "acquired taste."
 
 ---
 
-## Data access and limitations
+## What changes on Nov 9, and how to tell
 
-**Why some sources are still missing.** This cloud session's network allowlist is empty: only package registries, GitHub, and a web-search tool can get out. Direct requests to news sites, Wikiquote, the American Presidency Project, CNN transcripts, GDELT, Voteview.com and the FEC API are all refused by the session's proxy. I asked twice to add those 20 sites (once as a new environment, once on the Default environment), and the environments service rejected both requests. To change it yourself: open the environment menu in the session's title bar, choose Edit, and add the hosts under Network access → Allowed domains, or pick a broader access level.
+**Doesn't change:** ideology, the immigration agenda, loyalty to Trump.
+**Changes:** the internal friction. The policy accelerator now also runs the process.
 
-**What I used instead (all reachable):**
-- GitHub mirrors of Voteview data (full member history plus the 118th/119th Congresses).
-- `alexlitel/congresstweets` for legislators' tweets.
-- `unitedstates/congress-legislators` for each legislator's Twitter handle.
-- `epicfaace/jan6report` for Miller's deposition.
-- `mkiser/WTFJHT`, a daily news digest that quotes coverage verbatim with links.
-- About 60 targeted web searches.
+Indicators to track, each measurable with this repo's codebook:
+1. **Brake signals:** leaked or on-record signs of restraint coming from the chief of staff's office. *Prediction: they fall toward zero.*
+2. **Public profile:** the chief of staff's posts and TV appearances per week. *Prediction: well above Wiles's level.*
+3. **Register:** Miller's ATTACK/POWER share after Nov 9. *Is it still above 80%, or does the job pull him toward management talk?*
+4. **Pace:** executive actions per month, and the rate of court losses on them.
+5. **Ideal point:** *Prediction: no movement.* If it moves, finding 1 is wrong.
 
-**Remaining limitations:**
-- **Small, press-filtered quote corpus.** Wiles is genuinely low-output; even so, her count rose from 38 to 55 quotes.
-- **Wording not checked against originals.** Reported quotes came via search summaries and digests. Each one has a source URL.
-- **Single coder.** One AI coder assigned the function, target and perception codes, and some lexicon terms were tuned after reading the data.
-- **OCR noise.** The deposition text is OCR'd. Miller's answers were extracted by rule, so a few lines may be misassigned.
-- **DW-NOMINATE is extrapolated, not measured.** Both methods borrow other people's votes: legislators' tweets for the text model, and their bosses' votes for the bridge.
+## What would sharpen this
+
+- **Better ideal points:** Bonica's campaign-finance scores (CFscores) and Barberá's follower-network scores are the standard choices for non-legislators. Both need data from sites this session can't reach (Harvard Dataverse, the X API).
+- **Full transcripts and timelines:** these would replace press-filtered quotes and let us measure how much the press picks the most extreme lines.
+- **A second human coder** for the function and stance codes, to measure reliability.
+
+## Data and limitations
+
+- **Quote sources:** about 60 web searches; the WTFJHT digest; GitHub mirrors of Voteview, congresstweets and the Jan. 6 transcripts. Direct access to news sites and archives is blocked in this session (see `docs/METHODOLOGY.md`).
+- **Small, press-filtered quote sample.** Wiles is genuinely low-output, and 27 of her 55 quotes come from Vanity Fair.
+- **Wording:** each quote has a source URL, but wording should be checked against the original before citing.
+- **Coding:** function, target, stance and perception were all coded by one AI coder, with no reliability check. Some lexicon terms were chosen after reading the data, which inflates the vocabulary gaps.
+
+## Appendix
+
+**Distinctive words** (small effects, |z| ≤ 1.4; illustration only):
+
+![words](figures/distinctive_words.png)
+
+- **Authorship classifier:** character n-grams, leave-one-out. Balanced accuracy 0.60 against a shuffled-label 95th percentile of 0.59 (p = 0.04). Their phrasing alone barely gives them away; their content does.
+- **Corpus composition:** see the figure below and `reports/results.json`.
+
+![corpus](figures/corpus_channels.png)
