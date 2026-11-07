@@ -2,47 +2,49 @@
   "corpus": {
     "by_channel": {
       "wiles": {
+        "internal_chat": 0,
         "internal_memo": 1,
         "press_remarks": 0,
-        "print_interview": 19,
-        "social": 11,
-        "speech": 0,
-        "third_party_report": 1,
+        "print_interview": 28,
+        "social": 15,
+        "speech": 2,
+        "third_party_report": 2,
         "tv_interview": 6,
-        "written_statement": 0
+        "written_statement": 1
       },
       "miller": {
+        "internal_chat": 1,
         "internal_memo": 0,
         "press_remarks": 3,
         "print_interview": 0,
-        "social": 15,
+        "social": 17,
         "speech": 7,
-        "third_party_report": 0,
+        "third_party_report": 2,
         "tv_interview": 13,
         "written_statement": 1
       }
     },
     "by_quote_status": {
       "wiles": {
-        "fragment": 21,
-        "full": 14,
+        "fragment": 29,
+        "full": 22,
         "paraphrase": 2,
         "stitched": 0,
-        "third_party_report": 1
+        "third_party_report": 2
       },
       "miller": {
-        "fragment": 14,
-        "full": 23,
+        "fragment": 16,
+        "full": 24,
         "paraphrase": 1,
         "stitched": 1,
-        "third_party_report": 0
+        "third_party_report": 2
       }
     },
-    "n_total": 77,
-    "n_perceptions": 38,
+    "n_total": 99,
+    "n_perceptions": 43,
     "date_range": {
       "wiles": [
-        "2024-02-25",
+        "2018-09-26",
         "2026-11-06"
       ],
       "miller": [
@@ -53,438 +55,438 @@
   },
   "style_summary": {
     "wiles": {
-      "n_utterances": 14,
-      "tokens": 158,
-      "mean_words_per_sentence": 11.285714285714286,
-      "vader_mean": 0.007708108108108111
+      "n_utterances": 22,
+      "tokens": 257,
+      "mean_words_per_sentence": 11.681818181818182,
+      "vader_mean": 0.048686792452830197
     },
     "miller": {
-      "n_utterances": 23,
-      "tokens": 392,
-      "mean_words_per_sentence": 10.31578947368421,
-      "vader_mean": -0.11059210526315788
+      "n_utterances": 24,
+      "tokens": 398,
+      "mean_words_per_sentence": 10.205128205128204,
+      "vader_mean": -0.11003658536585363
     }
   },
   "lexicon_rates": [
     {
       "feature": "lex_hedge",
-      "wiles": 2.614,
-      "wiles_lo": 1.143,
-      "wiles_hi": 4.278,
-      "miller": 0.398,
+      "wiles": 1.965,
+      "wiles_lo": 0.895,
+      "wiles_hi": 3.183,
+      "miller": 0.388,
       "miller_lo": 0.0,
-      "miller_hi": 0.998,
-      "diff_m_minus_w": -2.216,
-      "diff_lo": -4.02,
-      "diff_hi": -0.626,
-      "p_perm": 0.002,
-      "n_wiles": 37,
-      "n_miller": 38,
-      "q_bh": 0.004
+      "miller_hi": 0.954,
+      "diff_m_minus_w": -1.577,
+      "diff_lo": -2.911,
+      "diff_hi": -0.359,
+      "p_perm": 0.013,
+      "n_wiles": 53,
+      "n_miller": 41,
+      "q_bh": 0.024
     },
     {
       "feature": "lex_certainty",
-      "wiles": 3.922,
-      "wiles_lo": 1.356,
-      "wiles_hi": 7.443,
-      "miller": 2.191,
-      "miller_lo": 0.849,
-      "miller_hi": 3.748,
-      "diff_m_minus_w": -1.73,
-      "diff_lo": -5.46,
-      "diff_hi": 1.237,
-      "p_perm": 0.263,
-      "n_wiles": 37,
-      "n_miller": 38,
-      "q_bh": 0.263
+      "wiles": 3.057,
+      "wiles_lo": 1.302,
+      "wiles_hi": 5.581,
+      "miller": 2.33,
+      "miller_lo": 1.007,
+      "miller_hi": 3.874,
+      "diff_m_minus_w": -0.727,
+      "diff_lo": -3.483,
+      "diff_hi": 1.667,
+      "p_perm": 0.582,
+      "n_wiles": 53,
+      "n_miller": 41,
+      "q_bh": 0.582
     },
     {
       "feature": "lex_threat",
       "wiles": 0.0,
       "wiles_lo": 0.0,
       "wiles_hi": 0.0,
-      "miller": 5.378,
-      "miller_lo": 2.921,
-      "miller_hi": 8.707,
-      "diff_m_minus_w": 5.378,
-      "diff_lo": 2.921,
-      "diff_hi": 8.707,
-      "p_perm": 0.002,
-      "n_wiles": 37,
-      "n_miller": 38,
-      "q_bh": 0.004
+      "miller": 5.437,
+      "miller_lo": 3.041,
+      "miller_hi": 8.958,
+      "diff_m_minus_w": 5.437,
+      "diff_lo": 3.041,
+      "diff_hi": 8.958,
+      "p_perm": 0.0,
+      "n_wiles": 53,
+      "n_miller": 41,
+      "q_bh": 0.002
     },
     {
       "feature": "lex_power",
       "wiles": 0.0,
       "wiles_lo": 0.0,
       "wiles_hi": 0.0,
-      "miller": 5.179,
-      "miller_lo": 2.684,
-      "miller_hi": 7.641,
-      "diff_m_minus_w": 5.179,
-      "diff_lo": 2.684,
-      "diff_hi": 7.641,
-      "p_perm": 0.002,
-      "n_wiles": 37,
-      "n_miller": 38,
-      "q_bh": 0.004
-    },
-    {
-      "feature": "lex_sacred",
-      "wiles": 0.0,
-      "wiles_lo": 0.0,
-      "wiles_hi": 0.0,
-      "miller": 1.992,
-      "miller_lo": 0.492,
-      "miller_hi": 4.11,
-      "diff_m_minus_w": 1.992,
-      "diff_lo": 0.492,
-      "diff_hi": 4.11,
-      "p_perm": 0.076,
-      "n_wiles": 37,
-      "n_miller": 38,
-      "q_bh": 0.098
-    },
-    {
-      "feature": "lex_nation",
-      "wiles": 0.98,
-      "wiles_lo": 0.0,
-      "wiles_hi": 2.609,
-      "miller": 3.386,
-      "miller_lo": 1.53,
-      "miller_hi": 5.817,
-      "diff_m_minus_w": 2.406,
-      "diff_lo": -0.011,
-      "diff_hi": 5.11,
-      "p_perm": 0.107,
-      "n_wiles": 37,
-      "n_miller": 38,
-      "q_bh": 0.12
-    },
-    {
-      "feature": "lex_management",
-      "wiles": 5.882,
-      "wiles_lo": 3.254,
-      "wiles_hi": 8.562,
-      "miller": 0.398,
-      "miller_lo": 0.0,
-      "miller_hi": 1.033,
-      "diff_m_minus_w": -5.484,
-      "diff_lo": -8.225,
-      "diff_hi": -2.834,
+      "miller": 5.049,
+      "miller_lo": 2.575,
+      "miller_hi": 7.451,
+      "diff_m_minus_w": 5.049,
+      "diff_lo": 2.575,
+      "diff_hi": 7.451,
       "p_perm": 0.0,
-      "n_wiles": 37,
-      "n_miller": 38,
+      "n_wiles": 53,
+      "n_miller": 41,
       "q_bh": 0.002
     },
     {
-      "feature": "lex_affiliation",
-      "wiles": 2.941,
-      "wiles_lo": 0.338,
-      "wiles_hi": 6.546,
-      "miller": 0.0,
+      "feature": "lex_sacred",
+      "wiles": 0.218,
+      "wiles_lo": 0.0,
+      "wiles_hi": 0.708,
+      "miller": 1.942,
+      "miller_lo": 0.482,
+      "miller_hi": 3.929,
+      "diff_m_minus_w": 1.723,
+      "diff_lo": 0.2,
+      "diff_hi": 3.734,
+      "p_perm": 0.063,
+      "n_wiles": 53,
+      "n_miller": 41,
+      "q_bh": 0.071
+    },
+    {
+      "feature": "lex_nation",
+      "wiles": 0.873,
+      "wiles_lo": 0.0,
+      "wiles_hi": 2.036,
+      "miller": 3.301,
+      "miller_lo": 1.465,
+      "miller_hi": 5.669,
+      "diff_m_minus_w": 2.428,
+      "diff_lo": 0.289,
+      "diff_hi": 4.983,
+      "p_perm": 0.047,
+      "n_wiles": 53,
+      "n_miller": 41,
+      "q_bh": 0.06
+    },
+    {
+      "feature": "lex_management",
+      "wiles": 4.367,
+      "wiles_lo": 2.469,
+      "wiles_hi": 6.429,
+      "miller": 0.388,
       "miller_lo": 0.0,
-      "miller_hi": 0.0,
-      "diff_m_minus_w": -2.941,
-      "diff_lo": -6.546,
-      "diff_hi": -0.338,
+      "miller_hi": 1.01,
+      "diff_m_minus_w": -3.978,
+      "diff_lo": -6.1,
+      "diff_hi": -1.994,
       "p_perm": 0.001,
-      "n_wiles": 37,
-      "n_miller": 38,
+      "n_wiles": 53,
+      "n_miller": 41,
       "q_bh": 0.003
     },
     {
-      "feature": "lex_evaluative",
-      "wiles": 3.595,
-      "wiles_lo": 1.653,
-      "wiles_hi": 6.16,
-      "miller": 0.398,
+      "feature": "lex_affiliation",
+      "wiles": 1.965,
+      "wiles_lo": 0.216,
+      "wiles_hi": 4.454,
+      "miller": 0.0,
       "miller_lo": 0.0,
-      "miller_hi": 1.05,
-      "diff_m_minus_w": -3.196,
-      "diff_lo": -5.816,
-      "diff_hi": -1.15,
-      "p_perm": 0.002,
-      "n_wiles": 37,
-      "n_miller": 38,
-      "q_bh": 0.004
+      "miller_hi": 0.0,
+      "diff_m_minus_w": -1.965,
+      "diff_lo": -4.454,
+      "diff_hi": -0.216,
+      "p_perm": 0.039,
+      "n_wiles": 53,
+      "n_miller": 41,
+      "q_bh": 0.058
+    },
+    {
+      "feature": "lex_evaluative",
+      "wiles": 2.402,
+      "wiles_lo": 1.055,
+      "wiles_hi": 4.043,
+      "miller": 0.388,
+      "miller_lo": 0.0,
+      "miller_hi": 1.033,
+      "diff_m_minus_w": -2.013,
+      "diff_lo": -3.751,
+      "diff_hi": -0.536,
+      "p_perm": 0.012,
+      "n_wiles": 53,
+      "n_miller": 41,
+      "q_bh": 0.024
     }
   ],
   "lexicon_rates_without_vanity_fair": [
     {
       "feature": "lex_hedge",
-      "wiles": 2.326,
-      "wiles_lo": 0.549,
-      "wiles_hi": 4.474,
-      "miller": 0.398,
+      "wiles": 1.521,
+      "wiles_lo": 0.353,
+      "wiles_hi": 3.008,
+      "miller": 0.388,
       "miller_lo": 0.0,
-      "miller_hi": 0.917,
-      "diff_m_minus_w": -1.927,
-      "diff_lo": -4.142,
-      "diff_hi": -0.084,
-      "p_perm": 0.01,
-      "n_wiles": 18,
-      "n_miller": 38,
-      "q_bh": 0.025
+      "miller_hi": 0.94,
+      "diff_m_minus_w": -1.133,
+      "diff_lo": -2.689,
+      "diff_hi": 0.169,
+      "p_perm": 0.077,
+      "n_wiles": 26,
+      "n_miller": 41,
+      "q_bh": 0.139
     },
     {
       "feature": "lex_certainty",
-      "wiles": 2.907,
-      "wiles_lo": 0.619,
-      "wiles_hi": 5.65,
-      "miller": 2.191,
-      "miller_lo": 0.847,
-      "miller_hi": 3.757,
-      "diff_m_minus_w": -0.716,
-      "diff_lo": -3.633,
-      "diff_hi": 2.197,
-      "p_perm": 0.616,
-      "n_wiles": 18,
-      "n_miller": 38,
-      "q_bh": 0.616
+      "wiles": 2.662,
+      "wiles_lo": 0.833,
+      "wiles_hi": 4.958,
+      "miller": 2.33,
+      "miller_lo": 1.002,
+      "miller_hi": 3.827,
+      "diff_m_minus_w": -0.331,
+      "diff_lo": -2.843,
+      "diff_hi": 1.932,
+      "p_perm": 0.805,
+      "n_wiles": 26,
+      "n_miller": 41,
+      "q_bh": 0.906
     },
     {
       "feature": "lex_threat",
       "wiles": 0.0,
       "wiles_lo": 0.0,
       "wiles_hi": 0.0,
-      "miller": 5.378,
-      "miller_lo": 2.803,
-      "miller_hi": 8.819,
-      "diff_m_minus_w": 5.378,
-      "diff_lo": 2.803,
-      "diff_hi": 8.819,
-      "p_perm": 0.019,
-      "n_wiles": 18,
-      "n_miller": 38,
-      "q_bh": 0.035
+      "miller": 5.437,
+      "miller_lo": 3.071,
+      "miller_hi": 8.875,
+      "diff_m_minus_w": 5.437,
+      "diff_lo": 3.071,
+      "diff_hi": 8.875,
+      "p_perm": 0.008,
+      "n_wiles": 26,
+      "n_miller": 41,
+      "q_bh": 0.018
     },
     {
       "feature": "lex_power",
       "wiles": 0.0,
       "wiles_lo": 0.0,
       "wiles_hi": 0.0,
-      "miller": 5.179,
-      "miller_lo": 2.685,
-      "miller_hi": 7.573,
-      "diff_m_minus_w": 5.179,
-      "diff_lo": 2.685,
-      "diff_hi": 7.573,
-      "p_perm": 0.011,
-      "n_wiles": 18,
-      "n_miller": 38,
-      "q_bh": 0.025
+      "miller": 5.049,
+      "miller_lo": 2.736,
+      "miller_hi": 7.411,
+      "diff_m_minus_w": 5.049,
+      "diff_lo": 2.736,
+      "diff_hi": 7.411,
+      "p_perm": 0.004,
+      "n_wiles": 26,
+      "n_miller": 41,
+      "q_bh": 0.014
     },
     {
       "feature": "lex_sacred",
-      "wiles": 0.0,
+      "wiles": 0.38,
       "wiles_lo": 0.0,
-      "wiles_hi": 0.0,
-      "miller": 1.992,
-      "miller_lo": 0.496,
-      "miller_hi": 3.917,
-      "diff_m_minus_w": 1.992,
-      "diff_lo": 0.496,
-      "diff_hi": 3.917,
-      "p_perm": 0.161,
-      "n_wiles": 18,
-      "n_miller": 38,
-      "q_bh": 0.241
+      "wiles_hi": 1.2,
+      "miller": 1.942,
+      "miller_lo": 0.453,
+      "miller_hi": 3.909,
+      "diff_m_minus_w": 1.562,
+      "diff_lo": -0.072,
+      "diff_hi": 3.677,
+      "p_perm": 0.219,
+      "n_wiles": 26,
+      "n_miller": 41,
+      "q_bh": 0.281
     },
     {
       "feature": "lex_nation",
-      "wiles": 1.163,
+      "wiles": 1.141,
       "wiles_lo": 0.0,
-      "wiles_hi": 3.75,
-      "miller": 3.386,
-      "miller_lo": 1.582,
-      "miller_hi": 5.788,
-      "diff_m_minus_w": 2.224,
-      "diff_lo": -1.142,
-      "diff_hi": 5.321,
-      "p_perm": 0.244,
-      "n_wiles": 18,
-      "n_miller": 38,
-      "q_bh": 0.314
+      "wiles_hi": 3.019,
+      "miller": 3.301,
+      "miller_lo": 1.511,
+      "miller_hi": 5.671,
+      "diff_m_minus_w": 2.16,
+      "diff_lo": -0.479,
+      "diff_hi": 4.962,
+      "p_perm": 0.184,
+      "n_wiles": 26,
+      "n_miller": 41,
+      "q_bh": 0.276
     },
     {
       "feature": "lex_management",
-      "wiles": 8.721,
-      "wiles_lo": 4.61,
-      "wiles_hi": 12.304,
-      "miller": 0.398,
+      "wiles": 6.464,
+      "wiles_lo": 3.482,
+      "wiles_hi": 9.593,
+      "miller": 0.388,
       "miller_lo": 0.0,
-      "miller_hi": 1.037,
-      "diff_m_minus_w": -8.323,
-      "diff_lo": -12.044,
-      "diff_hi": -4.145,
+      "miller_hi": 1.028,
+      "diff_m_minus_w": -6.076,
+      "diff_lo": -9.162,
+      "diff_hi": -3.022,
       "p_perm": 0.001,
-      "n_wiles": 18,
-      "n_miller": 38,
+      "n_wiles": 26,
+      "n_miller": 41,
       "q_bh": 0.006
     },
     {
       "feature": "lex_affiliation",
-      "wiles": 5.233,
-      "wiles_lo": 0.615,
-      "wiles_hi": 11.111,
+      "wiles": 3.422,
+      "wiles_lo": 0.374,
+      "wiles_hi": 7.706,
       "miller": 0.0,
       "miller_lo": 0.0,
       "miller_hi": 0.0,
-      "diff_m_minus_w": -5.233,
-      "diff_lo": -11.111,
-      "diff_hi": -0.615,
-      "p_perm": 0.003,
-      "n_wiles": 18,
-      "n_miller": 38,
-      "q_bh": 0.012
+      "diff_m_minus_w": -3.422,
+      "diff_lo": -7.706,
+      "diff_hi": -0.374,
+      "p_perm": 0.005,
+      "n_wiles": 26,
+      "n_miller": 41,
+      "q_bh": 0.014
     },
     {
       "feature": "lex_evaluative",
-      "wiles": 0.581,
+      "wiles": 0.38,
       "wiles_lo": 0.0,
-      "wiles_hi": 2.083,
-      "miller": 0.398,
+      "wiles_hi": 1.299,
+      "miller": 0.388,
       "miller_lo": 0.0,
-      "miller_hi": 1.027,
-      "diff_m_minus_w": -0.183,
-      "diff_lo": -1.763,
-      "diff_hi": 0.83,
-      "p_perm": 0.598,
-      "n_wiles": 18,
-      "n_miller": 38,
-      "q_bh": 0.616
+      "miller_hi": 0.994,
+      "diff_m_minus_w": 0.008,
+      "diff_lo": -1.036,
+      "diff_hi": 0.878,
+      "p_perm": 0.978,
+      "n_wiles": 26,
+      "n_miller": 41,
+      "q_bh": 0.978
     }
   ],
   "style_rates": [
     {
       "feature": "pro_i",
-      "wiles": 6.962,
-      "wiles_lo": 3.57,
-      "wiles_hi": 10.194,
-      "miller": 0.765,
+      "wiles": 7.004,
+      "wiles_lo": 4.367,
+      "wiles_hi": 9.434,
+      "miller": 0.754,
       "miller_lo": 0.0,
-      "miller_hi": 2.616,
-      "diff_m_minus_w": -6.197,
-      "diff_lo": -9.804,
-      "diff_hi": -2.401,
-      "p_perm": 0.002,
-      "n_wiles": 14,
-      "n_miller": 23,
-      "q_bh": 0.016
+      "miller_hi": 2.507,
+      "diff_m_minus_w": -6.25,
+      "diff_lo": -8.941,
+      "diff_hi": -3.157,
+      "p_perm": 0.0,
+      "n_wiles": 22,
+      "n_miller": 24,
+      "q_bh": 0.002
     },
     {
       "feature": "pro_we",
-      "wiles": 2.532,
+      "wiles": 1.556,
       "wiles_lo": 0.0,
-      "wiles_hi": 5.521,
-      "miller": 3.827,
-      "miller_lo": 1.481,
-      "miller_hi": 6.195,
-      "diff_m_minus_w": 1.295,
-      "diff_lo": -2.372,
-      "diff_hi": 4.657,
-      "p_perm": 0.543,
-      "n_wiles": 14,
-      "n_miller": 23,
-      "q_bh": 0.55
+      "wiles_hi": 3.53,
+      "miller": 3.769,
+      "miller_lo": 1.51,
+      "miller_hi": 6.045,
+      "diff_m_minus_w": 2.212,
+      "diff_lo": -0.761,
+      "diff_hi": 4.972,
+      "p_perm": 0.211,
+      "n_wiles": 22,
+      "n_miller": 24,
+      "q_bh": 0.289
     },
     {
       "feature": "pro_you",
-      "wiles": 1.266,
+      "wiles": 0.778,
       "wiles_lo": 0.0,
-      "wiles_hi": 3.226,
-      "miller": 4.337,
-      "miller_lo": 1.292,
-      "miller_hi": 8.376,
-      "diff_m_minus_w": 3.071,
-      "diff_lo": -0.479,
-      "diff_hi": 7.482,
-      "p_perm": 0.272,
-      "n_wiles": 14,
-      "n_miller": 23,
-      "q_bh": 0.435
+      "wiles_hi": 2.0,
+      "miller": 4.271,
+      "miller_lo": 1.304,
+      "miller_hi": 8.358,
+      "diff_m_minus_w": 3.493,
+      "diff_lo": 0.231,
+      "diff_hi": 7.672,
+      "p_perm": 0.119,
+      "n_wiles": 22,
+      "n_miller": 24,
+      "q_bh": 0.289
     },
     {
       "feature": "pro_they",
-      "wiles": 0.0,
+      "wiles": 0.389,
       "wiles_lo": 0.0,
-      "wiles_hi": 0.0,
-      "miller": 1.786,
-      "miller_lo": 0.48,
-      "miller_hi": 3.521,
-      "diff_m_minus_w": 1.786,
-      "diff_lo": 0.48,
-      "diff_hi": 3.521,
-      "p_perm": 0.138,
-      "n_wiles": 14,
-      "n_miller": 23,
-      "q_bh": 0.277
+      "wiles_hi": 1.322,
+      "miller": 1.759,
+      "miller_lo": 0.482,
+      "miller_hi": 3.502,
+      "diff_m_minus_w": 1.37,
+      "diff_lo": -0.16,
+      "diff_hi": 3.226,
+      "p_perm": 0.178,
+      "n_wiles": 22,
+      "n_miller": 24,
+      "q_bh": 0.289
     },
     {
       "feature": "pro_he",
-      "wiles": 3.165,
-      "wiles_lo": 0.595,
-      "wiles_hi": 6.668,
-      "miller": 0.51,
+      "wiles": 2.724,
+      "wiles_lo": 0.866,
+      "wiles_hi": 5.264,
+      "miller": 0.503,
       "miller_lo": 0.0,
-      "miller_hi": 1.32,
-      "diff_m_minus_w": -2.654,
-      "diff_lo": -6.222,
-      "diff_hi": -0.05,
-      "p_perm": 0.015,
-      "n_wiles": 14,
-      "n_miller": 23,
-      "q_bh": 0.06
+      "miller_hi": 1.336,
+      "diff_m_minus_w": -2.221,
+      "diff_lo": -4.905,
+      "diff_hi": -0.27,
+      "p_perm": 0.029,
+      "n_wiles": 22,
+      "n_miller": 24,
+      "q_bh": 0.116
     },
     {
       "feature": "exclaim",
-      "wiles": 0.633,
+      "wiles": 0.389,
       "wiles_lo": 0.0,
-      "wiles_hi": 2.0,
-      "miller": 0.255,
+      "wiles_hi": 1.255,
+      "miller": 0.251,
       "miller_lo": 0.0,
-      "miller_hi": 0.915,
-      "diff_m_minus_w": -0.378,
-      "diff_lo": -1.838,
-      "diff_hi": 0.703,
-      "p_perm": 0.55,
-      "n_wiles": 14,
-      "n_miller": 23,
-      "q_bh": 0.55
+      "miller_hi": 0.871,
+      "diff_m_minus_w": -0.138,
+      "diff_lo": -1.097,
+      "diff_hi": 0.711,
+      "p_perm": 0.527,
+      "n_wiles": 22,
+      "n_miller": 24,
+      "q_bh": 0.527
     },
     {
       "feature": "question",
       "wiles": 0.0,
       "wiles_lo": 0.0,
       "wiles_hi": 0.0,
-      "miller": 0.765,
+      "miller": 0.754,
       "miller_lo": 0.0,
-      "miller_hi": 1.818,
-      "diff_m_minus_w": 0.765,
+      "miller_hi": 1.804,
+      "diff_m_minus_w": 0.754,
       "diff_lo": 0.0,
-      "diff_hi": 1.818,
-      "p_perm": 0.348,
-      "n_wiles": 14,
-      "n_miller": 23,
-      "q_bh": 0.464
+      "diff_hi": 1.804,
+      "p_perm": 0.217,
+      "n_wiles": 22,
+      "n_miller": 24,
+      "q_bh": 0.289
     },
     {
       "feature": "negation",
-      "wiles": 3.165,
-      "wiles_lo": 1.136,
-      "wiles_hi": 5.326,
-      "miller": 1.02,
-      "miller_lo": 0.216,
-      "miller_hi": 2.214,
-      "diff_m_minus_w": -2.144,
-      "diff_lo": -4.433,
-      "diff_hi": 0.281,
-      "p_perm": 0.053,
-      "n_wiles": 14,
-      "n_miller": 23,
-      "q_bh": 0.143
+      "wiles": 1.946,
+      "wiles_lo": 0.635,
+      "wiles_hi": 3.584,
+      "miller": 1.005,
+      "miller_lo": 0.224,
+      "miller_hi": 2.174,
+      "diff_m_minus_w": -0.941,
+      "diff_lo": -2.767,
+      "diff_hi": 0.878,
+      "p_perm": 0.294,
+      "n_wiles": 22,
+      "n_miller": 24,
+      "q_bh": 0.336
     }
   ],
   "function_shares": {
@@ -493,20 +495,20 @@
       "POWER": 0.0,
       "MOBILIZE": 0.0,
       "POLICY": 0.0,
-      "LOYALTY": 0.162,
-      "DEFEND": 0.162,
-      "CANDOR": 0.378,
-      "MANAGE": 0.162,
-      "PERSONAL": 0.054,
-      "STRATEGY": 0.081
+      "LOYALTY": 0.17,
+      "DEFEND": 0.113,
+      "CANDOR": 0.415,
+      "MANAGE": 0.132,
+      "PERSONAL": 0.094,
+      "STRATEGY": 0.075
     },
     "miller": {
-      "ATTACK": 0.395,
-      "POWER": 0.263,
-      "MOBILIZE": 0.211,
-      "POLICY": 0.079,
-      "LOYALTY": 0.026,
-      "DEFEND": 0.026,
+      "ATTACK": 0.415,
+      "POWER": 0.268,
+      "MOBILIZE": 0.195,
+      "POLICY": 0.073,
+      "LOYALTY": 0.024,
+      "DEFEND": 0.024,
       "CANDOR": 0.0,
       "MANAGE": 0.0,
       "PERSONAL": 0.0,
@@ -519,19 +521,19 @@
       "POWER": 0.0,
       "MOBILIZE": 0.0,
       "POLICY": 0.0,
-      "DEFEND": 0.167,
-      "LOYALTY": 0.278,
-      "MANAGE": 0.278,
-      "PERSONAL": 0.111,
-      "STRATEGY": 0.167
+      "DEFEND": 0.115,
+      "LOYALTY": 0.308,
+      "MANAGE": 0.231,
+      "PERSONAL": 0.192,
+      "STRATEGY": 0.154
     },
     "miller": {
-      "ATTACK": 0.395,
-      "POWER": 0.263,
-      "MOBILIZE": 0.211,
-      "POLICY": 0.079,
-      "DEFEND": 0.026,
-      "LOYALTY": 0.026,
+      "ATTACK": 0.415,
+      "POWER": 0.268,
+      "MOBILIZE": 0.195,
+      "POLICY": 0.073,
+      "DEFEND": 0.024,
+      "LOYALTY": 0.024,
       "MANAGE": 0.0,
       "PERSONAL": 0.0,
       "STRATEGY": 0.0
@@ -541,24 +543,24 @@
     "wiles": {
       "OPPOSITION": 0.0,
       "IMMIGRANTS": 0.0,
-      "COURTS": 0.0,
       "FOREIGN": 0.0,
-      "NONE": 0.0,
-      "STAFF": 0.108,
-      "MEDIA": 0.135,
-      "INSIDERS": 0.216,
-      "PUBLIC": 0.054,
-      "SELF": 0.135,
-      "TRUMP": 0.351
+      "COURTS": 0.0,
+      "NONE": 0.057,
+      "STAFF": 0.075,
+      "MEDIA": 0.094,
+      "INSIDERS": 0.208,
+      "PUBLIC": 0.057,
+      "SELF": 0.151,
+      "TRUMP": 0.358
     },
     "miller": {
-      "OPPOSITION": 0.474,
-      "IMMIGRANTS": 0.184,
-      "COURTS": 0.105,
-      "FOREIGN": 0.105,
-      "NONE": 0.079,
-      "STAFF": 0.053,
-      "MEDIA": 0.0,
+      "OPPOSITION": 0.463,
+      "IMMIGRANTS": 0.171,
+      "FOREIGN": 0.122,
+      "COURTS": 0.098,
+      "NONE": 0.073,
+      "STAFF": 0.049,
+      "MEDIA": 0.024,
       "INSIDERS": 0.0,
       "PUBLIC": 0.0,
       "SELF": 0.0,
@@ -567,181 +569,181 @@
   },
   "audience_shares": {
     "wiles": {
-      "public": 0.297,
-      "partisan": 0.162,
-      "mainstream": 0.514,
-      "internal": 0.027
+      "public": 0.283,
+      "partisan": 0.151,
+      "mainstream": 0.547,
+      "internal": 0.019
     },
     "miller": {
-      "public": 0.395,
-      "partisan": 0.368,
-      "mainstream": 0.237,
-      "internal": 0.0
+      "public": 0.415,
+      "partisan": 0.341,
+      "mainstream": 0.22,
+      "internal": 0.024
     }
   },
   "fightin_words": [
     {
-      "word": "big",
-      "z": -1.226,
+      "word": "house",
+      "z": -1.347,
+      "n_wiles": 3,
+      "n_miller": 0
+    },
+    {
+      "word": "am",
+      "z": -1.347,
+      "n_wiles": 3,
+      "n_miller": 0
+    },
+    {
+      "word": "white",
+      "z": -1.347,
+      "n_wiles": 3,
+      "n_miller": 0
+    },
+    {
+      "word": "again",
+      "z": -1.098,
       "n_wiles": 2,
       "n_miller": 0
     },
     {
-      "word": "house",
-      "z": -1.226,
+      "word": "he's",
+      "z": -1.098,
+      "n_wiles": 2,
+      "n_miller": 0
+    },
+    {
+      "word": "campaign",
+      "z": -1.098,
+      "n_wiles": 2,
+      "n_miller": 0
+    },
+    {
+      "word": "cancer",
+      "z": -1.098,
+      "n_wiles": 2,
+      "n_miller": 0
+    },
+    {
+      "word": "work",
+      "z": -1.098,
+      "n_wiles": 2,
+      "n_miller": 0
+    },
+    {
+      "word": "it's",
+      "z": -1.098,
       "n_wiles": 2,
       "n_miller": 0
     },
     {
       "word": "staff",
-      "z": -1.226,
+      "z": -1.098,
       "n_wiles": 2,
       "n_miller": 0
     },
     {
-      "word": "white",
-      "z": -1.226,
+      "word": "doctors",
+      "z": -1.098,
       "n_wiles": 2,
       "n_miller": 0
     },
     {
-      "word": "again",
-      "z": -1.226,
+      "word": "big",
+      "z": -1.098,
       "n_wiles": 2,
       "n_miller": 0
     },
     {
-      "word": "nothing",
-      "z": -1.144,
-      "n_wiles": 3,
-      "n_miller": 1
-    },
-    {
-      "word": "loose",
-      "z": -0.865,
-      "n_wiles": 1,
-      "n_miller": 0
-    },
-    {
-      "word": "can't",
-      "z": -0.865,
-      "n_wiles": 1,
-      "n_miller": 0
-    },
-    {
-      "word": "2024",
-      "z": -0.865,
-      "n_wiles": 1,
-      "n_miller": 0
-    },
-    {
-      "word": "that's",
-      "z": -0.865,
-      "n_wiles": 1,
-      "n_miller": 0
-    },
-    {
-      "word": "along",
-      "z": -0.865,
-      "n_wiles": 1,
-      "n_miller": 0
-    },
-    {
-      "word": "backbiting",
-      "z": -0.865,
-      "n_wiles": 1,
-      "n_miller": 0
-    },
-    {
-      "word": "english",
-      "z": 0.87,
+      "word": "change",
+      "z": 1.008,
       "n_wiles": 0,
       "n_miller": 2
     },
     {
-      "word": "time",
-      "z": 0.87,
+      "word": "americans",
+      "z": 1.008,
+      "n_wiles": 0,
+      "n_miller": 2
+    },
+    {
+      "word": "nyc",
+      "z": 1.008,
       "n_wiles": 0,
       "n_miller": 2
     },
     {
       "word": "government",
-      "z": 0.87,
+      "z": 1.008,
       "n_wiles": 0,
       "n_miller": 2
     },
     {
-      "word": "states",
-      "z": 0.87,
+      "word": "world",
+      "z": 1.236,
       "n_wiles": 0,
-      "n_miller": 2
+      "n_miller": 3
     },
     {
       "word": "dismantle",
-      "z": 1.067,
-      "n_wiles": 0,
-      "n_miller": 3
-    },
-    {
-      "word": "federal",
-      "z": 1.067,
-      "n_wiles": 0,
-      "n_miller": 3
-    },
-    {
-      "word": "domestic",
-      "z": 1.067,
-      "n_wiles": 0,
-      "n_miller": 3
-    },
-    {
-      "word": "governed",
-      "z": 1.067,
-      "n_wiles": 0,
-      "n_miller": 3
-    },
-    {
-      "word": "country",
-      "z": 1.067,
+      "z": 1.236,
       "n_wiles": 0,
       "n_miller": 3
     },
     {
       "word": "language",
-      "z": 1.067,
+      "z": 1.236,
       "n_wiles": 0,
       "n_miller": 3
     },
     {
-      "word": "world",
-      "z": 1.067,
+      "word": "federal",
+      "z": 1.236,
+      "n_wiles": 0,
+      "n_miller": 3
+    },
+    {
+      "word": "country",
+      "z": 1.236,
+      "n_wiles": 0,
+      "n_miller": 3
+    },
+    {
+      "word": "governed",
+      "z": 1.236,
       "n_wiles": 0,
       "n_miller": 3
     },
     {
       "word": "insurrection",
-      "z": 1.235,
+      "z": 1.43,
+      "n_wiles": 0,
+      "n_miller": 4
+    },
+    {
+      "word": "domestic",
+      "z": 1.43,
       "n_wiles": 0,
       "n_miller": 4
     }
   ],
   "separability": {
-    "balanced_accuracy": 0.5590327169274538,
-    "null_mean": 0.4798115220483642,
-    "null_95": 0.600906827880512,
-    "p_perm": 0.10891089108910891,
-    "n": 75
+    "balanced_accuracy": 0.5984813621721123,
+    "null_mean": 0.48397376898297273,
+    "null_95": 0.59033594109526,
+    "p_perm": 0.039603960396039604,
+    "n": 94
   },
   "perception_means": {
     "wiles": {
-      "warmth": 0.2222222222222222,
-      "competence": 0.6111111111111112,
-      "dominance": 0.0
+      "warmth": 0.2727272727272727,
+      "competence": 0.5454545454545454,
+      "dominance": -0.045454545454545456
     },
     "miller": {
-      "warmth": -0.5,
-      "competence": 0.2,
-      "dominance": 0.65
+      "warmth": -0.5238095238095238,
+      "competence": 0.19047619047619047,
+      "dominance": 0.6666666666666666
     }
   },
   "perception_by_alignment": {
@@ -751,9 +753,9 @@
       "dominance": 0.0
     },
     "miller|critic": {
-      "warmth": -0.86,
-      "competence": -0.29,
-      "dominance": 0.86
+      "warmth": -0.88,
+      "competence": -0.25,
+      "dominance": 0.88
     },
     "miller|neutral": {
       "warmth": -0.67,
@@ -761,19 +763,90 @@
       "dominance": 0.78
     },
     "wiles|ally": {
-      "warmth": 0.62,
-      "competence": 0.88,
-      "dominance": 0.12
+      "warmth": 0.7,
+      "competence": 0.8,
+      "dominance": 0.1
     },
     "wiles|critic": {
-      "warmth": -0.25,
-      "competence": 0.0,
+      "warmth": -0.2,
+      "competence": -0.2,
       "dominance": 0.0
     },
     "wiles|neutral": {
       "warmth": 0.0,
-      "competence": 0.67,
-      "dominance": -0.17
+      "competence": 0.71,
+      "dominance": -0.29
+    }
+  },
+  "miller_register_public_vs_deposition": {
+    "lex_hedge": {
+      "public": 0.3883495145631068,
+      "deposition": 1.2278567627157302
+    },
+    "lex_certainty": {
+      "public": 2.3300970873786406,
+      "deposition": 0.6918573709419904
+    },
+    "lex_threat": {
+      "public": 5.436893203883495,
+      "deposition": 0.007602828252109785
+    },
+    "lex_power": {
+      "public": 5.048543689320389,
+      "deposition": 0.03421272713449403
+    },
+    "lex_sacred": {
+      "public": 1.941747572815534,
+      "deposition": 0.0038014141260548926
+    },
+    "lex_nation": {
+      "public": 3.3009708737864076,
+      "deposition": 0.11024100965559187
+    },
+    "lex_management": {
+      "public": 0.3883495145631068,
+      "deposition": 0.36113434197521477
+    },
+    "lex_affiliation": {
+      "public": 0.0,
+      "deposition": 0.08743252489926252
+    },
+    "lex_evaluative": {
+      "public": 0.3883495145631068,
+      "deposition": 0.038014141260548924
+    },
+    "pro_i": {
+      "public": 0.5825242718446602,
+      "deposition": 6.6676803771002815
+    },
+    "pro_we": {
+      "public": 3.1067961165048543,
+      "deposition": 0.6576446438074964
+    },
+    "pro_you": {
+      "public": 3.3009708737864076,
+      "deposition": 2.3834866570364177
+    },
+    "pro_they": {
+      "public": 1.5533980582524272,
+      "deposition": 0.49038242226108114
+    },
+    "pro_he": {
+      "public": 0.3883495145631068,
+      "deposition": 0.7260700980764845
+    },
+    "negation": {
+      "public": 0.970873786407767,
+      "deposition": 3.0069185737094197
+    },
+    "question": {
+      "public": 0.5825242718446602,
+      "deposition": 0.532197977647685
+    },
+    "_n": {
+      "public_tokens": 515,
+      "deposition_tokens": 26306,
+      "deposition_answers": 450
     }
   }
 }

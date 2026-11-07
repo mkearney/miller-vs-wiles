@@ -102,7 +102,7 @@ discover → fetch → normalize → dedupe → attribute → verify → enrich 
 - Second-hand material is always labeled as such and is never mixed into own-voice metrics.
 - Pejorative third-party labels ("fascist," "madman") are recorded as *data about perception*, coded by source alignment, and never adopted as findings.
 
-## 9. What v1 actually is
+## 9. What v1/v2 actually are
 
 v1 was built in a sandbox where **direct page fetches were blocked**; only a web
 search tool worked. So v1 consists of:
@@ -111,7 +111,16 @@ search tool worked. So v1 consists of:
 - the full analysis pipeline (features, permutation/bootstrap stats, FDR, fightin'-words, LOO attribution classifier, SCM persona coding, sensitivity runs);
 - figures and a findings report.
 
-**Treat v1 as a working prototype on a small, press-filtered sample.** The code
+**v2 additions** (via GitHub, which this sandbox can reach):
+- **WTFJHT** daily digests, run through a rule-based extractor and hand-reviewed.
+- **Miller's Jan. 6 Committee deposition**: 450 answers, used as a register check.
+- **Voteview DW-NOMINATE** mirrors and **congresstweets**, used to estimate DW-NOMINATE for both people (`src/mvw/nominate.py`). Two methods:
+  - *Text scaling*, validated out of sample with a k-text calibration.
+  - *Employer bridge*: the scores of the legislators and presidents each person worked for.
+
+DW-NOMINATE is defined only for people who cast roll-call votes, so these are placements on the scale, not true scores.
+
+**Treat v1/v2 as a working prototype on a small, press-filtered quote sample.** The code
 is built to take the v2 corpus without changes to the analysis layer.
 
 ## 10. Limitations of v1 (read before citing anything)

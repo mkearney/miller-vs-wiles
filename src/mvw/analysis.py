@@ -216,6 +216,17 @@ def run(make_figures: bool = True) -> dict:
     sep = separability(utt, content)
     pg, pa = perception_summary(per)
 
+    # Register check: Miller under oath (2022 J6 deposition) vs. Miller in public.
+    dep = pd.read_json(DATA / "miller_deposition_2022.jsonl", lines=True, dtype={"date": str}, convert_dates=False)
+    dep["tokens"] = dep["text"].map(tokenize); dep["n_tokens"] = dep["tokens"].map(len)
+    fd = featurize(dep)
+    pub_idx = utt.index[content & (utt.speaker == "miller")]
+    register = {}
+    for col in lex_cols + pro_cols + ["negation", "question"]:
+        register[col] = {"public": rate_per_100(f, col, pub_idx), "deposition": rate_per_100(fd, col, fd.index)}
+    register["_n"] = {"public_tokens": int(f.loc[pub_idx, "n_tokens"].sum()), "deposition_tokens": int(fd.n_tokens.sum()),
+                      "deposition_answers": int(len(dep))}
+
     results = {
         "corpus": {"by_channel": desc.to_dict(), "by_quote_status": status.to_dict(),
                    "n_total": int(len(utt)), "n_perceptions": int(len(per)),
@@ -232,6 +243,7 @@ def run(make_figures: bool = True) -> dict:
         "separability": sep,
         "perception_means": {s: {k: float(pg.loc[s, (k, "mean")]) for k in ["warmth", "competence", "dominance"]} for s in SPEAKERS},
         "perception_by_alignment": {f"{a}|{b}": v for (a, b), v in pa.to_dict(orient="index").items()},
+        "miller_register_public_vs_deposition": register,
     }
     OUT.mkdir(exist_ok=True)
     (OUT / "results.json").write_text(json.dumps(results, indent=2, default=str))

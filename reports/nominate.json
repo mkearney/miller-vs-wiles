@@ -1,0 +1,200 @@
+{
+  "validation": {
+    "n_tweets": 81365,
+    "n_legislators": 395,
+    "tweet_level_r": 0.681908311438941,
+    "legislator_level_r_all_tweets": 0.9489109783869176,
+    "calibration": {
+      "26": {
+        "intercept": -0.052209571951601697,
+        "slope": 2.0931454298328758,
+        "resid_sd": 0.16976680870015992,
+        "r": 0.9348545878018526,
+        "correct_party_side": 0.9852827763496144
+      },
+      "41": {
+        "intercept": -0.05393226274699118,
+        "slope": 2.1216277173694666,
+        "resid_sd": 0.1626726796873405,
+        "r": 0.9403342992006293,
+        "correct_party_side": 0.9875651041666667
+      },
+      "53": {
+        "intercept": -0.053789448905392404,
+        "slope": 2.1248966049434523,
+        "resid_sd": 0.15959540030558977,
+        "r": 0.9425179492959129,
+        "correct_party_side": 0.9878306878306878
+      },
+      "200": {
+        "intercept": -0.046187307374026036,
+        "slope": 2.137495116341533,
+        "resid_sd": 0.1436331672173012,
+        "r": 0.954201815875324,
+        "correct_party_side": 0.9962264150943396
+      }
+    }
+  },
+  "scores": {
+    "wiles_all": {
+      "n_texts": 53,
+      "raw_mean": 0.13733598893221574,
+      "estimate": 0.2380353277132244,
+      "pi95": [
+        -0.07477165688573156,
+        0.5508423123121804
+      ],
+      "bootstrap95": [
+        0.15379435895980528,
+        0.32650787225054134
+      ]
+    },
+    "miller_all": {
+      "n_texts": 41,
+      "raw_mean": 0.17270195004951228,
+      "estimate": 0.3124769813218112,
+      "pi95": [
+        -0.006361470865376195,
+        0.6313154335089985
+      ],
+      "bootstrap95": [
+        0.18813688118309038,
+        0.43303326176932905
+      ]
+    },
+    "wiles_excl_vanity_fair": {
+      "n_texts": 26,
+      "raw_mean": 0.09780241874628301,
+      "estimate": 0.15250511387378177,
+      "pi95": [
+        -0.18023783117853168,
+        0.48524805892609524
+      ],
+      "bootstrap95": [
+        0.02498729669671189,
+        0.2961729210808562
+      ]
+    },
+    "miller_deposition_2022 (200 answers)": {
+      "n_texts": 200,
+      "raw_mean": 0.06149562437582404,
+      "estimate": 0.08525928940567118,
+      "pi95": [
+        -0.1962617183402392,
+        0.36678029715158156
+      ],
+      "bootstrap95": [
+        0.04712880127929436,
+        0.12041091336189663
+      ]
+    }
+  },
+  "model_terms": {
+    "most_left": [
+      "black",
+      "democracy",
+      "republicans",
+      "la02",
+      "profits",
+      "americanrescueplan",
+      "climate",
+      "new mexico",
+      "massachusetts",
+      "clean energy",
+      "democratic",
+      "forthepeople",
+      "lgbtq",
+      "women",
+      "peopleoverpolitics",
+      "buildbackbetter",
+      "philly",
+      "trans",
+      "ri",
+      "chicago",
+      "workers",
+      "hate",
+      "tx07",
+      "colorado",
+      "violence"
+    ],
+    "most_right": [
+      "biden",
+      "hawley",
+      "wyoming",
+      "border",
+      "utah",
+      "tennessee",
+      "president trump",
+      "conservative",
+      "idaho",
+      "china",
+      "spending",
+      "woke",
+      "alabama",
+      "louisiana",
+      "fl02",
+      "fauci",
+      "god",
+      "fentanyl",
+      "unborn",
+      "pelosi",
+      "democrat",
+      "the left",
+      "crime",
+      "roy",
+      "rep roy"
+    ]
+  },
+  "principals": [
+    {
+      "person": "miller",
+      "principal": "Rep. Michele Bachmann (press secretary, 2007-09)",
+      "dw_nominate_dim1": 0.584
+    },
+    {
+      "person": "miller",
+      "principal": "Rep. John Shadegg (press secretary, 2009)",
+      "dw_nominate_dim1": 0.749
+    },
+    {
+      "person": "miller",
+      "principal": "Sen. Jeff Sessions (press sec. -> comms director, 2009-16)",
+      "dw_nominate_dim1": 0.549
+    },
+    {
+      "person": "miller",
+      "principal": "President Trump (2016-21, 2025-)",
+      "dw_nominate_dim1": 0.403
+    },
+    {
+      "person": "wiles",
+      "principal": "Rep. Jack Kemp (staff assistant, 1979)",
+      "dw_nominate_dim1": 0.3
+    },
+    {
+      "person": "wiles",
+      "principal": "President Reagan (1980 campaign scheduler)",
+      "dw_nominate_dim1": 0.692
+    },
+    {
+      "person": "wiles",
+      "principal": "Rick Scott (2010 campaign mgr; Senate score from 2019-)",
+      "dw_nominate_dim1": 0.668
+    },
+    {
+      "person": "wiles",
+      "principal": "Ron DeSantis (2018 campaign chair; House score 2013-18)",
+      "dw_nominate_dim1": 0.663
+    },
+    {
+      "person": "wiles",
+      "principal": "President Trump (2016-21, 2023-26)",
+      "dw_nominate_dim1": 0.403
+    }
+  ],
+  "reference": {
+    "trump_president": 0.403,
+    "house_senate_R_mean_118": 0.5143440860215054,
+    "house_senate_D_mean_118": -0.3780885608856089
+  }
+}
