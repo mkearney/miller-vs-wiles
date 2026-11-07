@@ -4,7 +4,7 @@ How do **Susie Wiles** and **Stephen Miller** compare as communicators? Trump na
 
 ## Finding: same agenda, different friction
 
-- **Same ideology.** Both are mainstream Republicans: about +0.55 on a −1 (liberal) to +1 (conservative) scale, where the average congressional Republican is +0.51 and Trump +0.40. Both are loyal to Trump, and Miller's agenda was already White House policy.
+- **Same agenda.** Miller already ran immigration and homeland security policy as deputy chief of staff under Wiles. His hardline views were White House policy before Nov 9 and remain so after. (Standard left–right ideology scores can't tell the two apart, but those scores miss immigration and executive power, the dimensions where Miller stands out.)
 - **Different job.** Wiles's public words point inward: managing staff, defending the team, and (on the record) pushing back on Trump. Miller's point outward: attacking opponents and pushing for more power and force.
 - **What changes on Nov 9** is the internal friction, not the direction. The policy accelerator now also runs the process.
 

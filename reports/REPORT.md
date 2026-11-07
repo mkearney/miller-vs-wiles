@@ -6,7 +6,7 @@ them by others, and Miller's 450-answer Jan. 6 Committee deposition.*
 
 ## The short answer
 
-The easy take is that Miller is the hardliner and Wiles the quiet moderate. On **ideology**, that's wrong. Both sit at the same mainstream-Republican position, they worked for the same kind of politicians, and both are loyal to Trump. Miller's immigration agenda was already White House policy under Wiles, and it stays.
+The easy take is that Miller is the hardliner and Wiles the quiet operator. The data supports the first half: on immigration, executive power and treating opponents as enemies, Miller is far out. But that isn't what changes on Nov 9. **Miller's agenda was already White House policy**: he ran immigration and homeland security as deputy chief of staff under Wiles.
 
 What changes is **the job being done at the top of the staff**. Wiles's public words are about running the building: managing staff, defending the team, and (on the record) pushing back on Trump. Miller's are about fighting opponents and expanding power. **The agenda doesn't change; the internal friction does.** The person who most often pushed for more power and force now also controls what reaches the president.
 
@@ -16,37 +16,14 @@ What changes is **the job being done at the top of the staff**. Wiles's public w
 
 | # | Finding | Evidence | Why that rating |
 |---|---|---|---|
-| 1 | **Same left–right position.** Both are mainstream Republicans: about +0.55 on a −1 to +1 scale (average congressional Republican +0.51). | **Moderate** | Two independent methods agree, but the positions are estimated, not measured (see §1) |
-| 2 | **Different job.** Wiles points inward (Trump, staff, colleagues); Miller points outward (opponents, immigrants, courts, foreign states). | **Strong** | Very large gaps (0% vs 85% aimed at political out-groups) that survive dropping Wiles's biggest source |
-| 3 | **Wiles brakes, Miller accelerates.** 17% of Wiles's quotes signal limits or pushback, against 2% of Miller's. 39% of Miller's push for more power or force, against 0% of Wiles's. | **Moderate for Miller, weak for Wiles** | Miller's accelerator pattern appears across venues. *Every* Wiles brake quote comes from one source (Vanity Fair), backed by third-party reports, and whether her brake actually worked is unproven |
-| 4 | **Miller's public voice is partly a chosen register.** Under oath he sounds much more like Wiles. | **Moderate** | Strong contrast, but the deposition is from 2022 and in a legal setting |
+| 1 | **Different job.** Wiles points inward (Trump, staff, colleagues); Miller points outward (opponents, immigrants, courts, foreign states). | **Strong** | Very large gaps (0% vs 85% aimed at political out-groups) that survive dropping Wiles's biggest source |
+| 2 | **Wiles brakes, Miller accelerates.** 17% of Wiles's quotes signal limits or pushback, against 2% of Miller's. 39% of Miller's push for more power or force, against 0% of Wiles's. | **Moderate for Miller, weak for Wiles** | Miller's accelerator pattern appears across venues. *Every* Wiles brake quote comes from one source (Vanity Fair), backed by third-party reports, and whether her brake actually worked is unproven |
+| 3 | **Miller's public voice is partly a chosen register.** Under oath he sounds much more like Wiles. | **Moderate** | Strong contrast, but the deposition is from 2022 and in a legal setting |
+| 4 | **Standard ideology scores can't separate them**, because those scores miss what makes Miller distinctive. | **Methodological** | The old left–right scale measures economics and the role of government, not immigration, nationalism or executive power (§5) |
 
 ---
 
-## 1. Ideology: the same
-
-![ideal points](figures/ideal_points.png)
-
-These are **ideal-point estimates**: each person's left–right position inferred from evidence, shown on the DW-NOMINATE scale (−1 liberal to +1 conservative) so they can be compared with members of Congress. Neither person has a true DW-NOMINATE score, because that requires congressional roll-call votes.
-
-| Method | Wiles | Miller |
-|---|---|---|
-| **Employer bridge** (preferred): average score of the politicians they worked for | **+0.55** (range 0.30–0.69) | **+0.57** (range 0.40–0.75) |
-| Text scaling (lower bound): how much their words resemble Republican vs. Democratic legislators' tweets | +0.24 (95% PI −0.08 to 0.55) | +0.31 (95% PI −0.01 to 0.63) |
-| *For comparison* | Trump +0.40 · average congressional Republican +0.51 · average Democrat −0.38 | |
-
-**Who they worked for:**
-- **Wiles:** Rep. Kemp +0.30, Reagan +0.69, Rick Scott +0.67, DeSantis +0.66, Trump +0.40.
-- **Miller:** Rep. Bachmann +0.58, Rep. Shadegg +0.75, Sen. Sessions +0.55, Trump +0.40.
-
-Counting only post-2009 bosses, they come out identical: +0.58 vs +0.57.
-
-**Why text scaling is only a lower bound.** The model was trained on 81,365 congressional tweets. Tested on legislators it hadn't seen, it recovers their real scores from just 26–53 tweets each (r = 0.94). But it misreads this material:
-- "Deport the invaders, or surrender to insurrection" scores *liberal*, because "insurrection" was mostly Democratic vocabulary about Jan. 6.
-- It can't tell who is accusing whom when Miller uses words like "hate" and "violence."
-- Calm registers such as testimony and management talk look centrist.
-
-## 2. Job: inward manager vs. outward combatant
+## 1. Job: inward manager vs. outward combatant
 
 ![functions](figures/functions.png)
 ![targets](figures/targets.png)
@@ -58,7 +35,7 @@ Counting only post-2009 bosses, they come out identical: +0.58 vs +0.57.
 
 ![lexicon](figures/lexicon_rates.png)
 
-## 3. Friction: who brakes, who accelerates
+## 2. Friction: who brakes, who accelerates
 
 **Miller, accelerator (39% of quotes), across venues:**
 - habeas corpus suspension "actively looking at"
@@ -79,7 +56,7 @@ Counting only post-2009 bosses, they come out identical: +0.58 vs +0.57.
 
 **The counterpoint, which matters:** Trump did the Jan. 6 pardons and the tariffs anyway, and Wiles herself said "if there's a tie, he wins." Her brake signals also come from a profile she may have given partly to shape her legacy. **The case that she *was positioned* as a brake is decent. The case that the brake *worked* is weak.** If it rarely worked, the practical change on Nov 9 is smaller than the rhetorical gap suggests.
 
-## 4. Register: Miller under oath
+## 3. Register: Miller under oath
 
 | per 100 words | Miller in public | Miller under oath (26,306 words) | Wiles in public |
 |---|---|---|---|
@@ -91,7 +68,7 @@ The firebrand voice is a choice, not the only way he talks. But at the one event
 - **Wiles:** "That was Charlie's army, and he made sure they understood what was at stake."
 - **Miller:** "You are nothing. You are wickedness, you are jealousy, you are envy, you are hatred."
 
-## 5. How others see them
+## 4. How others see them
 
 ![perception](figures/perception_scm.png)
 
@@ -101,11 +78,31 @@ Allies describe both as loyal and effective. Neutral reporters split them:
 
 Inside the building, people say staff "will take a bullet for Susie." Accounts of Miller describe a "wartime general" who shouts at staff and an "acquired taste."
 
+## 5. Why standard ideology scores don't separate them
+
+![ideal points](figures/ideal_points.png)
+
+It's natural to ask where each sits on the standard left–right scale used for Congress (DW-NOMINATE, −1 liberal to +1 conservative). Neither has a true score, because that requires roll-call votes. So I estimated **ideal points** (left–right positions inferred from other evidence) two ways:
+
+| Method | Wiles | Miller |
+|---|---|---|
+| Employer bridge: average score of the politicians they worked for | +0.55 (range 0.30–0.69) | +0.57 (range 0.40–0.75) |
+| Text scaling: how much their words resemble Republican vs. Democratic legislators' tweets | +0.24 (95% PI −0.08 to 0.55) | +0.31 (95% PI −0.01 to 0.63) |
+| *For comparison* | Trump +0.40 · average congressional Republican +0.51 · average Democrat −0.38 | |
+
+**Don't read these as "they have the same ideology," or "Miller is a mainstream Republican."** On this scale the two are indistinguishable, but the scale itself is blind to what matters here:
+
+- **It measures the old divide.** DW-NOMINATE's first dimension tracks economics and the size of government. Immigration restriction, tariffs, nationalism and expanded executive power, the things Trump changed, barely register. That is why Trump scores *less* conservative (+0.40) than the average congressional Republican. His Voteview score comes from his stated positions on bills in 2017–20, much of it conventional fare like tax cuts.
+- **The employer bridge measures their bosses, not them.** Sen. Sessions scores an ordinary +0.55, yet he led the Senate's immigration restrictionists, and Miller wrote his speeches. The scale can't see that.
+- **The text model misreads the material.** It was trained on 81,365 congressional tweets and recovers held-out legislators' scores well (r = 0.94 from 26–53 tweets). But "Deport the invaders, or surrender to insurrection" scores *liberal*, because in 2021 "insurrection" was mostly Democratic vocabulary about Jan. 6. It also can't tell who is accusing whom when Miller says "hate" or "violence."
+
+The dimension where Miller is clearly further out (immigration, executive power, opponents as enemies) is measured by §1–2, not by this scale. Better ideal-point methods for non-legislators (Bonica's campaign-finance CFscores, Barberá's follower networks) would help, but they'd still mostly capture the old left–right divide.
+
 ---
 
 ## What changes on Nov 9, and how to tell
 
-**Doesn't change:** ideology, the immigration agenda, loyalty to Trump.
+**Doesn't change:** the immigration agenda (already Miller's), loyalty to Trump.
 **Changes:** the internal friction. The policy accelerator now also runs the process.
 
 Indicators to track, each measurable with this repo's codebook:
@@ -113,11 +110,10 @@ Indicators to track, each measurable with this repo's codebook:
 2. **Public profile:** the chief of staff's posts and TV appearances per week. *Prediction: well above Wiles's level.*
 3. **Register:** Miller's ATTACK/POWER share after Nov 9. *Is it still above 80%, or does the job pull him toward management talk?*
 4. **Pace:** executive actions per month, and the rate of court losses on them.
-5. **Ideal point:** *Prediction: no movement.* If it moves, finding 1 is wrong.
 
 ## What would sharpen this
 
-- **Better ideal points:** Bonica's campaign-finance scores (CFscores) and Barberá's follower-network scores are the standard choices for non-legislators. Both need data from sites this session can't reach (Harvard Dataverse, the X API).
+- **Ideology on the dimensions that matter:** issue-specific scaling of positions on immigration, trade and executive power, rather than the old left–right axis. CFscores and follower-network ideal points could serve as cross-checks, but both need data this session can't reach (Harvard Dataverse, the X API).
 - **Full transcripts and timelines:** these would replace press-filtered quotes and let us measure how much the press picks the most extreme lines.
 - **A second human coder** for the function and stance codes, to measure reliability.
 

@@ -143,10 +143,10 @@ def ideal_point_chart(path=None):
     s, ref = r["scores"], r["reference"]
     pr = {k: [x["dw_nominate_dim1"] for x in r["principals"] if x["person"] == k] for k in ("wiles", "miller")}
     rows = [  # (label, person, point, lo, hi)
-        ("Employer bridge (preferred)\nmean of bosses, range", "wiles", float(np.mean(pr["wiles"])), min(pr["wiles"]), max(pr["wiles"])),
-        ("Employer bridge (preferred)\nmean of bosses, range", "miller", float(np.mean(pr["miller"])), min(pr["miller"]), max(pr["miller"])),
-        ("Text scaling (lower bound)\nall quotes", "wiles", s["wiles_all"]["estimate"], *s["wiles_all"]["pi95"]),
-        ("Text scaling (lower bound)\nall quotes", "miller", s["miller_all"]["estimate"], *s["miller_all"]["pi95"]),
+        ("Employer bridge\nmean of bosses, range", "wiles", float(np.mean(pr["wiles"])), min(pr["wiles"]), max(pr["wiles"])),
+        ("Employer bridge\nmean of bosses, range", "miller", float(np.mean(pr["miller"])), min(pr["miller"]), max(pr["miller"])),
+        ("Text scaling\nall quotes", "wiles", s["wiles_all"]["estimate"], *s["wiles_all"]["pi95"]),
+        ("Text scaling\nall quotes", "miller", s["miller_all"]["estimate"], *s["miller_all"]["pi95"]),
         ("Text scaling\nWiles w/o Vanity Fair;\nMiller deposition", "wiles", s["wiles_excl_vanity_fair"]["estimate"], *s["wiles_excl_vanity_fair"]["pi95"]),
         ("Text scaling\nWiles w/o Vanity Fair;\nMiller deposition", "miller", s["miller_deposition_2022 (200 answers)"]["estimate"], *s["miller_deposition_2022 (200 answers)"]["pi95"]),
     ]
@@ -167,7 +167,7 @@ def ideal_point_chart(path=None):
     ax.set_yticks(range(len(labels)), labels[::-1])
     ax.set_xlim(-0.6, 1.0)
     ax.set_ylim(-0.6, len(labels) - 0.2)
-    _style(ax, "Left–right position (ideal points, DW-NOMINATE scale)", "← liberal      conservative →   (bars: 95% prediction interval / range)")
+    _style(ax, "On the old left–right scale, they look the same", "← liberal      conservative →   (bars: 95% prediction interval / range)")
     ax.legend(frameon=True, facecolor=SURF, edgecolor=SURF, framealpha=1, fontsize=9, labelcolor=INK2, loc="lower left")
     _save(fig, "ideal_points.png")
 
