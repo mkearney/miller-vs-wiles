@@ -16,7 +16,7 @@ What changes is **the job being done at the top of the staff**. Wiles's public w
 
 | # | Finding | Evidence | Why that rating |
 |---|---|---|---|
-| 1 | **Same left–right position.** Both are mainstream Republicans, at about +0.55 on the DW-NOMINATE scale. | **Moderate** | Two independent methods agree, but neither person has roll-call votes, so it has to be estimated |
+| 1 | **Same left–right position.** Both are mainstream Republicans: about +0.55 on a −1 to +1 scale (average congressional Republican +0.51). | **Moderate** | Two independent methods agree, but the positions are estimated, not measured (see §1) |
 | 2 | **Different job.** Wiles points inward (Trump, staff, colleagues); Miller points outward (opponents, immigrants, courts, foreign states). | **Strong** | Very large gaps (0% vs 85% aimed at political out-groups) that survive dropping Wiles's biggest source |
 | 3 | **Wiles brakes, Miller accelerates.** 17% of Wiles's quotes signal limits or pushback, against 2% of Miller's. 39% of Miller's push for more power or force, against 0% of Wiles's. | **Moderate for Miller, weak for Wiles** | Miller's accelerator pattern appears across venues. *Every* Wiles brake quote comes from one source (Vanity Fair), backed by third-party reports, and whether her brake actually worked is unproven |
 | 4 | **Miller's public voice is partly a chosen register.** Under oath he sounds much more like Wiles. | **Moderate** | Strong contrast, but the deposition is from 2022 and in a legal setting |
