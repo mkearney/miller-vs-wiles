@@ -121,16 +121,19 @@ def corpus(desc):
 
 def make_all(utt, per, lex, fn, tg, fw, desc, headline=None):
     FIG.mkdir(parents=True, exist_ok=True)
+    for f in FIG.glob("*.png"):
+        f.unlink()
     plt.rcParams["font.family"] = "DejaVu Sans"
+    if headline is not None:
+        headline_chart(headline, ["Pushes for more power or force", "Signals limits or pushback"],
+                       "Brake vs. accelerator", "brake_accelerator.png", height=2.6)
+        headline_chart(headline, ["Aimed at political out-groups", "Attacks or rallies against opponents",
+                                  "About Trump or colleagues", "Manages, defends or credits the team"],
+                       "Who and what they talk about", "focus.png", height=3.6)
     lexicon_dotplot(lex)
-    grouped_share(fn, "functions.png", "What each quote is doing (rhetorical function)")
-    grouped_share(tg, "targets.png", "Who each quote is aimed at")
-    fightin(fw)
     perception(per)
     corpus(desc)
     ideal_point_chart()
-    if headline is not None:
-        headline_chart(headline)
 
 
 def ideal_point_chart(path=None):
@@ -172,18 +175,20 @@ def ideal_point_chart(path=None):
     _save(fig, "ideal_points.png")
 
 
-def headline_chart(h):
-    """The one-glance comparison: share of quotes meeting each indicator, Wilson 95% CIs."""
+def headline_chart(h, indicators=None, title="Same agenda, different job", name="headline.png", height=4.4):
+    """Share of each speaker's quotes meeting each indicator, with Wilson 95% CIs."""
+    if indicators is not None:
+        h = h.set_index("indicator").loc[indicators].reset_index()
     d = h.iloc[::-1].reset_index(drop=True)
     y = np.arange(len(d)); off = 0.17
-    fig, ax = plt.subplots(figsize=(7.5, 4.4))
+    fig, ax = plt.subplots(figsize=(7.5, height))
     for s, o in [("wiles", off), ("miller", -off)]:
         ax.barh(y + o, d[s] * 100, height=0.3, color=COLOR[s], label=LABEL[s])
         ax.hlines(y + o, d[f"{s}_lo"] * 100, d[f"{s}_hi"] * 100, color=INK2, linewidth=1)
         for yi, v, hi in zip(y + o, d[s] * 100, d[f"{s}_hi"] * 100):
             ax.text(max(v, hi) + 1.2, yi, f"{v:.0f}%", va="center", ha="left", fontsize=8, color=INK2)
     ax.set_yticks(y, d.indicator)
-    ax.set_xlim(0, 105)
-    _style(ax, "Same agenda, different job", "% of each speaker's quotes (lines: 95% CI)")
+    ax.set_xlim(0, min(105, 100 * max(d["wiles_hi"].max(), d["miller_hi"].max()) + 12))
+    _style(ax, title, "% of each speaker's public quotes (lines: 95% CI)")
     _legend(ax)
-    _save(fig, "headline.png")
+    _save(fig, name)

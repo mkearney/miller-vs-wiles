@@ -43,7 +43,7 @@ Each descriptor is scored −1 / 0 / +1 on three dimensions:
 
 The descriptor's source is also coded: **ally** (administration or MAGA), **critic** (opponents, or intra-party critics speaking critically), or **neutral** (straight news reporting).
 
-## v2 reliability protocol
+## Reliability check (planned)
 
 1. Two trained human coders and one LLM coder (prompted with this codebook, temperature 0) all code a stratified 20% sample.
 2. Report Krippendorff's α for each field. Revise the definitions until α ≥ 0.7.

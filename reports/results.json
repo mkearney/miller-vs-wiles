@@ -687,12 +687,6 @@
   },
   "fightin_words": [
     {
-      "word": "am",
-      "z": -1.347,
-      "n_wiles": 3,
-      "n_miller": 0
-    },
-    {
       "word": "white",
       "z": -1.347,
       "n_wiles": 3,
@@ -705,19 +699,31 @@
       "n_miller": 0
     },
     {
-      "word": "staff",
+      "word": "am",
+      "z": -1.347,
+      "n_wiles": 3,
+      "n_miller": 0
+    },
+    {
+      "word": "doctors",
       "z": -1.098,
       "n_wiles": 2,
       "n_miller": 0
     },
     {
-      "word": "cancer",
+      "word": "he's",
       "z": -1.098,
       "n_wiles": 2,
       "n_miller": 0
     },
     {
       "word": "campaign",
+      "z": -1.098,
+      "n_wiles": 2,
+      "n_miller": 0
+    },
+    {
+      "word": "big",
       "z": -1.098,
       "n_wiles": 2,
       "n_miller": 0
@@ -741,34 +747,16 @@
       "n_miller": 0
     },
     {
-      "word": "big",
+      "word": "staff",
       "z": -1.098,
       "n_wiles": 2,
       "n_miller": 0
     },
     {
-      "word": "he's",
+      "word": "cancer",
       "z": -1.098,
       "n_wiles": 2,
       "n_miller": 0
-    },
-    {
-      "word": "doctors",
-      "z": -1.098,
-      "n_wiles": 2,
-      "n_miller": 0
-    },
-    {
-      "word": "need",
-      "z": 1.008,
-      "n_wiles": 0,
-      "n_miller": 2
-    },
-    {
-      "word": "looking",
-      "z": 1.008,
-      "n_wiles": 0,
-      "n_miller": 2
     },
     {
       "word": "government",
@@ -777,19 +765,43 @@
       "n_miller": 2
     },
     {
-      "word": "terrorism",
+      "word": "invaders",
       "z": 1.008,
       "n_wiles": 0,
       "n_miller": 2
     },
     {
-      "word": "governed",
+      "word": "charlie",
+      "z": 1.008,
+      "n_wiles": 0,
+      "n_miller": 2
+    },
+    {
+      "word": "need",
+      "z": 1.008,
+      "n_wiles": 0,
+      "n_miller": 2
+    },
+    {
+      "word": "world",
       "z": 1.236,
       "n_wiles": 0,
       "n_miller": 3
     },
     {
       "word": "federal",
+      "z": 1.236,
+      "n_wiles": 0,
+      "n_miller": 3
+    },
+    {
+      "word": "dismantle",
+      "z": 1.236,
+      "n_wiles": 0,
+      "n_miller": 3
+    },
+    {
+      "word": "governed",
       "z": 1.236,
       "n_wiles": 0,
       "n_miller": 3
@@ -807,25 +819,13 @@
       "n_miller": 3
     },
     {
-      "word": "world",
-      "z": 1.236,
-      "n_wiles": 0,
-      "n_miller": 3
-    },
-    {
-      "word": "dismantle",
-      "z": 1.236,
-      "n_wiles": 0,
-      "n_miller": 3
-    },
-    {
-      "word": "domestic",
+      "word": "insurrection",
       "z": 1.43,
       "n_wiles": 0,
       "n_miller": 4
     },
     {
-      "word": "insurrection",
+      "word": "domestic",
       "z": 1.43,
       "n_wiles": 0,
       "n_miller": 4

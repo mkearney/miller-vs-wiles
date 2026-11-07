@@ -1,44 +1,37 @@
-# miller-vs-wiles
+# From brake to accelerator
 
-How do **Susie Wiles** and **Stephen Miller** compare as communicators? Trump named Miller to replace Wiles as White House Chief of Staff on Nov 6, 2026 (effective Nov 9).
+Stephen Miller replaces Susie Wiles as White House Chief of Staff on November 9, 2026. Miller's immigration agenda was already White House policy, so this repo asks what else changes. It analyzes both people's public statements.
 
-## Finding: same agenda, different friction
+**Finding:** Wiles talks like a brake: she describes limits on Trump, disagreements, and times she was overruled. Miller talks like an accelerator: he pushes for more power, force and enforcement. The policy direction stays the same; the internal friction goes away.
 
-- **Same agenda.** Miller already ran immigration and homeland security policy as deputy chief of staff under Wiles. His hardline views were White House policy before Nov 9 and remain so after. (Standard left–right ideology scores can't tell the two apart, but those scores miss immigration and executive power, the dimensions where Miller stands out.)
-- **Different job.** Wiles's public words point inward: managing staff, defending the team, and (on the record) pushing back on Trump. Miller's point outward: attacking opponents and pushing for more power and force.
-- **What changes on Nov 9** is the internal friction, not the direction. The policy accelerator now also runs the process.
+![Brake vs. accelerator](reports/figures/brake_accelerator.png)
 
-→ **[Read the report](reports/REPORT.md)**
+**→ [Read the report](reports/REPORT.md)** (one page) · [Supporting analyses](reports/supporting-analyses.md)
 
-![headline](reports/figures/headline.png)
+## What's here
 
-## Repo layout
-
-| Path | What |
+| Path | Contents |
 |---|---|
-| `reports/REPORT.md` | Findings, rated by strength of evidence, plus the post–Nov 9 watch list |
-| `docs/METHODOLOGY.md` | Full design: corpus layers, sources, measures, inference, ethics, limits |
-| `docs/CODEBOOK.md` | Coding rules for function, target, stance (brake/accelerator) and perception |
-| `data/utterances.jsonl` | 99 attributed quotes with channel, audience, quote status, codes and source URL |
-| `data/perceptions.jsonl` | 43 descriptions of them by others, coded for warmth, competence and dominance |
-| `data/miller_deposition_2022.jsonl` | 450 answers from Miller's Jan. 6 Committee deposition (register check) |
-| `data/external/` | Voteview scores (95th–119th Congress) and legislator Twitter handles |
-| `src/mvw/analysis.py` | Features, headline indicators, bootstrap/permutation tests with FDR, figures |
-| `src/mvw/ideal_points.py` | Ideal points: text scaling on congressional tweets, plus employer bridge |
-| `collect/` | WTFJHT quote extractor, deposition parser, GDELT discovery script |
+| `reports/REPORT.md` | The main write-up |
+| `reports/supporting-analyses.md` | Vocabulary, Miller's testimony, how others describe them, ideology scores |
+| `data/utterances.jsonl` | 99 public quotes (55 Wiles, 44 Miller), each with date, venue, source link and codes |
+| `data/perceptions.jsonl` | 43 descriptions of the two by allies, critics and reporters |
+| `data/miller_deposition_2022.jsonl` | Miller's answers from his Jan. 6 Committee deposition |
+| `docs/CODEBOOK.md` | How each quote was coded, including brake / accelerator |
+| `docs/METHODOLOGY.md` | Sources, measures, statistics and limitations |
+| `src/mvw/` | Analysis code |
+| `collect/` | Scripts that gathered and parsed the source material |
 
-## Run
+## Reproduce
 
 ```bash
 pip install pandas numpy scipy scikit-learn vaderSentiment matplotlib pyyaml pytest
-# Ideal-point text model (needs congressional tweets; ~1 min)
-git clone --depth 1 --filter=blob:none --sparse https://github.com/alexlitel/congresstweets /tmp/ct
-(cd /tmp/ct && git sparse-checkout set --no-cone '/data/2021-0[4-6]-*' '/data/2023-0[1-3]-*.json')
-cd src && python -m mvw.ideal_points /tmp/ct/data && cd ..
-python run.py   # ~3 min; writes reports/results.json and figures
+python run.py   # writes reports/results.json and the figures (~3 min)
 pytest -q
 ```
 
-## Caveats
+The ideology-score model (`src/mvw/ideal_points.py`) needs a separate download of congressional tweets; its docstring has the steps.
 
-The quote sample is small and press-filtered, and Wiles is genuinely low-output. Each quote has a source URL but should be checked against the original. One AI coder did all the coding. The build session couldn't reach news sites or archives directly, so sources came via web search and GitHub mirrors. Details are in the report's limitations section.
+## Limits
+
+The quote sample is small and comes mostly from news coverage, so it reflects what journalists chose to quote. Wiles rarely speaks publicly, and most of her "brake" quotes come from one series of Vanity Fair interviews. One coder (an AI model) assigned the codes. Every quote links to its source; check the wording there before citing it.

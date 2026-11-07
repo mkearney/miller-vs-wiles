@@ -1,134 +1,57 @@
-# Methodology: comparing Susie Wiles and Stephen Miller as communicators
+# Methodology
 
-On Nov 6, 2026 Trump announced that Stephen Miller would replace Susie Wiles as
-White House Chief of Staff, effective Nov 9. This document lays out how I would
-build a rigorous comparison of the two from their public communication. It also
-says which parts this repo's v1 implements and which wait for v2.
+## Question
 
----
+Miller's policy agenda was already White House policy before he became chief of staff, so what does the change at the top of the staff actually change? We compare how Wiles and Miller use their public voices: what they talk about, who they target, and whether they push the president's agenda forward or put limits on it.
 
-## 1. The core problem: two very different evidence bases
+## Data
 
-The main fact about this comparison is that **the two corpora are not alike**:
+**Quotes** (`data/utterances.jsonl`): 99 attributed public statements, 55 from Wiles and 44 from Miller, mostly February 2024 to November 2026. Sources:
+- News coverage found through targeted web searches.
+- *What The F\*\*\* Just Happened Today* (WTFJHT), a daily news digest that quotes coverage verbatim with links. Candidates were pulled with `collect/extract_wtfjht.py`, then reviewed by hand.
 
-| | Wiles | Miller |
-|---|---|---|
-| Public volume | Very low. She avoids cameras and posts rarely. | Very high: daily X posts, Fox hits, speeches, briefings |
-| Typical channel | Print interviews, rare TV, short X statements, internal memos | Social media, TV, rallies, press gaggles |
-| Biggest single source | Vanity Fair (Whipple), 11 recorded interviews, Dec 2025 | No single source dominates |
-| Who controls the framing | Mostly journalists, in long-form profiles | Mostly Miller himself |
+Each record has the date, venue, channel (TV, social post, speech, print interview, memo), the source link, and a **quote status**:
+- *full*: a complete sentence.
+- *fragment*: a short quoted phrase.
+- *paraphrase*: the reporter's wording.
+- *third-party report*: attributed through anonymous sources.
 
-So a naive "compare all their words" design compares **channels and gatekeepers**,
-not people. Every design choice below aims to separate *person* effects from
-*channel*, *audience*, *gatekeeper* and *volume* effects.
+Third-party reports, and one quote whose wording conflicts across sources, are excluded from the analysis. That leaves 53 usable Wiles quotes and 41 usable Miller quotes.
 
-## 2. Research questions
+**Descriptions by others** (`data/perceptions.jsonl`): 43 characterizations of the two by allies, critics and news reporters.
 
-1. **Voice.** How do they differ in style: pronouns, certainty versus hedging, sentence shape, tone?
-2. **Function.** What is each quote *doing*: attacking, asserting power, managing, defending, praising?
-3. **Targets.** Who do they talk about: out-groups (opposition, immigrants, courts, foreign states) or insiders (Trump, colleagues, staff)?
-4. **Worldview / power posture.** Do they use threat, securitization, sovereignty or sacred framing? How do they talk about the limits of power?
-5. **Mediated persona.** How do allies, critics and neutral reporters describe them? (This is the second-hand layer.)
-6. **Forecast.** What does the comparison suggest about how the Chief of Staff role will be *communicated* under Miller? Which of these measures can be tracked after Nov 9 to test that?
+**Miller's deposition** (`data/miller_deposition_2022.jsonl`): 450 answers from his April 2022 testimony to the House Jan. 6 Committee, parsed from OCR'd transcripts with `collect/parse_deposition.py`. It is used only to compare his public voice with his testimony.
 
-## 3. Corpus design: four layers, kept separate
+## Coding
 
-| Layer | What it is | Examples | Use |
-|---|---|---|---|
-| **L1 Own voice** | Words the person verifiably authored or spoke, from the primary record | X posts, full TV transcripts, speeches, memos | All analyses; the gold standard |
-| **L2 Reported speech** | Their words as quoted or paraphrased in news coverage | "Wiles said X," headline pull-quotes | Content analysis; lets us measure *quotability bias* |
-| **L3 Perception** | What *others* say about them | "Ice Maiden," "true believer," "architect" | Persona analysis (stereotype content model) |
-| **L0 Institutional / ghost-written** (optional) | Text they likely shaped but didn't sign | Miller-drafted Trump speeches and EOs, WH statements | Only with explicit attribution-uncertainty weights |
+Each quote is coded for **function** (attack, assert power, rally supporters, announce policy, defend, show loyalty, evaluate colleagues candidly, manage, strategize, personal), **target** (opposition, immigrants, courts, foreign governments, media, Trump, colleagues, staff, public, self), and **stance**:
+- **accelerator**: pushes for more executive power, force or enforcement, or for escalation against opponents.
+- **brake**: signals limits, disagreement, doubt or de-escalation about the president or a policy.
+- **neutral**: neither.
 
-Every record carries `quote_status` (full / fragment / stitched / paraphrase /
-third-party report), `channel`, `audience`, `venue`, `date`, `source_url`, and the
-annotation fields. The analysis sets **filter on these fields**: style metrics use
-complete sentences only, and content metrics tolerate fragments.
+Rules and examples are in `CODEBOOK.md`. One coder (an AI model) applied the codes; there is no second-coder reliability check yet.
 
-## 4. Ideal sources (v2)
+## Measures and statistics
 
-- **X/Twitter**: @StephenM and @SusieWiles timelines, via the API or archived snapshots (Wayback, Social Feed Manager).
-- **TV and radio transcripts**: CNN transcripts, Internet Archive TV News, Grabien/TVEyes for Fox, C-SPAN.
-- **Speeches and remarks**: whitehouse.gov, the American Presidency Project (UCSB), RealClearPolitics video transcripts.
-- **Podcasts and video without transcripts**: Whisper ASR plus pyannote diarization, spot-checked by hand.
-- **News at scale**: GDELT DOC 2.0 and Media Cloud for discovery; Factiva or LexisNexis for full text.
-- **Long-form and books**: Whipple's Vanity Fair series and audio; profiles in The Atlantic, Politico, FT, NYT.
-- **Documents**: FOIA releases, court filings, leaked memos, and the 2019 SPLC release of Miller–Breitbart emails. Handle this last one with an explicit ethics review, and keep it as its own layer.
+- **Headline indicators:** each person's share of usable quotes meeting a condition (e.g. stance = accelerator), with Wilson 95% confidence intervals.
+- **Vocabulary:** hits per 100 words from small, transparent word lists (threat, power, management, hedging, and others) plus pronoun rates. Speakers are compared with bootstrap confidence intervals and permutation tests, with a Benjamini–Hochberg false-discovery-rate correction. Some list terms were chosen after reading the quotes, which inflates these differences; treat them as descriptive.
+- **Robustness:** every comparison is rerun without the Vanity Fair interviews, which supply 27 of Wiles's 55 quotes.
+- **Perceptions:** each description is scored −1/0/+1 for warmth, competence and dominance, and summarized by the describer's alignment (ally, critic, neutral).
+- **Ideology scores** (`src/mvw/ideal_points.py`): estimated positions on the congressional left–right scale (DW-NOMINATE), using two methods:
+  - **from their bosses:** the Voteview scores of the politicians each person worked for;
+  - **from their words:** a ridge regression trained on 81,365 congressional tweets, validated on held-out legislators (r = 0.94 from 26–53 tweets each).
 
-## 5. Pipeline
+  As explained in the supporting analyses, this scale misses the issues where the two differ, so the scores play no part in the main finding.
 
-```
-discover → fetch → normalize → dedupe → attribute → verify → enrich → annotate → analyze → report
-```
+## Limitations
 
-1. **Discover**: GDELT and Media Cloud queries per person, plus a seed list of primary venues.
-2. **Fetch and normalize**: trafilatura for articles, the platform API for posts, ASR for audio.
-3. **Dedupe**: a single quote appears in hundreds of syndicated stories. Use MinHash/LSH on the quote text and keep one canonical record with a `n_outlets` count. The count is a useful *virality/quotability* feature in its own right.
-4. **Attribute**: quote-attribution extraction (LLM with span grounding: the model must return character offsets into the source text, which are then verified) to get `speaker`, `quote`, and `is_direct`.
-5. **Verify**: fuzzy-match each L2 quote to an L1 primary record (rapidfuzz, ratio ≥ 90). Unmatched quotes stay L2. Conflicting renderings are kept as variants (example: Miller's "dragon you have awakened" versus "what they have awakened").
-6. **Enrich**: outlet lean (AllSides / Ad Fontes), audience type, role period (pre- vs post-inauguration; post-Nov 9 for Miller as CoS).
-7. **Annotate**: see §6 and `CODEBOOK.md`.
+- **Small, press-filtered sample.** The quotes are what journalists chose to report, which favors Miller's most combative lines and Wiles's most candid ones.
+- **Wiles's brake signals rest mainly on one source**, her December 2025 Vanity Fair interviews, plus third-party reporting.
+- **Wording is unverified.** Most quotes were gathered from news summaries and digests rather than primary transcripts, so check wording against the linked source before citing.
+- **One coder,** with no reliability check.
 
-## 6. Measures
+## Extending this
 
-| Construct | v1 (this repo) | v2 (publication grade) |
-|---|---|---|
-| Stylometry | pronoun rates, sentence length, questions/exclamations, negation | Burrows' Delta on function words; char n-gram attribution |
-| Psycholinguistics | transparent mini-lexicons | LIWC-22 (Analytic, Clout, Authentic, Tone) |
-| Epistemic stance | hedge vs certainty lexicons | Hyland stance markers; **integrative complexity** (Suedfeld; automated AutoIC) |
-| Moral framing | "sacred" lexicon | MFD 2.0 / eMFD |
-| Threat & securitization | threat lexicon | supervised classifier trained on the codebook |
-| Power motive | power lexicon | Winter running-text motive scoring (LLM-assisted, human-validated) |
-| Populism | — | Hawkins holistic grading; Rooduijn & Pauwels dictionary |
-| Rhetorical function, target & stance | single-coder codebook (Claude in this session) | LLM coding + 2 human coders on a 20% gold set, Krippendorff's α ≥ 0.7 |
-| Issue agenda | targets | Comparative Agendas Project codes; BERTopic |
-| Semantic position | — | sentence embeddings; distance to a Trump reference corpus ("who sounds more like the boss") |
-| Persona | SCM warmth/competence/dominance, hand-coded | LLM-coded at scale, split by outlet alignment |
-| Sentiment | VADER | NRC emotion + transformer sentiment |
-
-## 7. Inference: separating people from confounds
-
-- **Channel and audience**: stratify by channel and report channel-matched contrasts, e.g. social vs social. In v2, fit hierarchical models: `rate ~ speaker + (1|channel) + (1|venue)` with a Poisson/NB offset for token count.
-- **Gatekeeper / quotability bias**: for any venue with both a full transcript (L1) and press quotes (L2), estimate how much more extreme the quoted subset is. This tells us how far the *mediated* persona is from the *actual* one.
-- **Single-source dominance**: rerun every analysis with the dominant venue left out (v1 drops Vanity Fair for Wiles).
-- **Volume asymmetry**: rate per 100 words; bootstrap over utterances. In v2, also downsample Miller to Wiles's size and look at the spread across samples.
-- **Multiple comparisons**: permutation tests with Benjamini–Hochberg FDR.
-- **Dictionary circularity**: dictionaries must be fixed *before* looking at the corpus. v1's mini-lexicons were partly refined while reading it (see Limitations), so v1 lexicon results count as descriptive only.
-- **Time**: interrupted time series on Miller's output around Nov 9, 2026. Does the CoS role pull him toward MANAGE/LOYALTY functions, or does he keep the ATTACK/POWER register?
-
-## 8. Ethics and framing
-
-- Both are senior public officials speaking in public roles. The analysis describes **communication**, not psychology. Following the spirit of the Goldwater rule, it makes no clinical or character diagnoses.
-- Second-hand material is always labeled as such and is never mixed into own-voice metrics.
-- Pejorative third-party labels ("fascist," "madman") are recorded as *data about perception*, coded by source alignment, and never adopted as findings.
-
-## 9. What v1/v2 actually are
-
-v1 was built in a sandbox where **direct page fetches were blocked**; only a web
-search tool worked. So v1 consists of:
-
-- 77 quote records (38 Wiles, 39 Miller) and 38 third-party descriptors, each with a source URL, gathered through ~35 targeted searches;
-- the full analysis pipeline (features, permutation/bootstrap stats, FDR, fightin'-words, LOO attribution classifier, SCM persona coding, sensitivity runs);
-- figures and a findings report.
-
-**v2 additions** (via GitHub, which this sandbox can reach):
-- **WTFJHT** daily digests, run through a rule-based extractor and hand-reviewed.
-- **Miller's Jan. 6 Committee deposition**: 450 answers, used as a register check.
-- **Voteview** mirrors and **congresstweets**, used to estimate each person's **ideal point** (left–right position), reported on the DW-NOMINATE scale (`src/mvw/ideal_points.py`). Two methods:
-  - *Text scaling*, validated out of sample with a k-text calibration.
-  - *Employer bridge*: the scores of the legislators and presidents each person worked for.
-
-DW-NOMINATE itself is defined only for people who cast roll-call votes, so these are ideal-point estimates placed on its scale, not DW-NOMINATE scores. The standard ideal-point methods for non-legislators are Bonica's campaign-finance CFscores (DIME) and Barberá's Twitter follower-network model. Both are recommended for v3; neither data source is reachable from the build sandbox.
-- **Stance coding** (brake / accelerator / neutral), added so the main claim, "same agenda, different friction," can be measured. See `CODEBOOK.md`.
-
-**Treat v1/v2 as a working prototype on a small, press-filtered quote sample.** The code
-is built to take the v2 corpus without changes to the analysis layer.
-
-## 10. Limitations of v1 (read before citing anything)
-
-1. **Small n.** About 37 usable quotes per person. Confidence intervals are wide, and only large effects can be detected.
-2. **Search-surfaced text.** Quotes came from search-engine summaries of news articles, not the articles themselves. Wording may differ slightly from the original, and every record needs verifying against its `source_url`.
-3. **Press selection.** Both corpora are mostly L2: what journalists chose to quote. That favors Miller's most inflammatory lines and Wiles's most candid ones.
-4. **Single coder.** Function, target and SCM codes were assigned by one coder (the AI assistant that built this). No reliability was measured.
-5. **Lexicons partly fit to the data.** Several terms (e.g. "zealot," "dragon," "trains on the tracks") were added after reading the corpus. That inflates lexicon contrasts. The function/target coding and the classifier are less exposed to this problem.
-6. **Asymmetric channels.** Miller has speeches and rallies; Wiles has none. Wiles has long-form print interviews; Miller has none in the sample.
+- **Primary sources:** full TV transcripts, complete X timelines and speech texts would replace press-selected quotes, and would let us measure how much the press favors extreme lines.
+- **A second human coder** for the stance and function codes, with Krippendorff's α reported.
+- **After November 9:** track the indicators listed at the end of the report (pushback signals, visibility, register, pace of executive action) for Miller as chief of staff.

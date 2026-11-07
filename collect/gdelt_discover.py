@@ -1,11 +1,10 @@
-"""v2 discovery: find candidate articles quoting each person via the GDELT DOC 2.0 API.
+"""Find candidate articles quoting each person via the GDELT DOC 2.0 API.
 
-Not used by v1: the sandbox that built v1 could not reach api.gdeltproject.org.
-Run it somewhere with open network access:
+For extending the quote dataset. Requires network access to api.gdeltproject.org:
 
     python collect/gdelt_discover.py --person miller --start 20241101 --end 20261107 > data/raw/miller_gdelt.jsonl
 
-The output is a list of *candidate* URLs. Next steps (see docs/METHODOLOGY.md §5):
+The output is a list of *candidate* URLs. Next steps:
 fetch full text with trafilatura → extract attributed quotes with span grounding
 → dedupe with MinHash → verify against primary transcripts → append to data/utterances.jsonl.
 """
