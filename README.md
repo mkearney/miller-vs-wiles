@@ -8,6 +8,8 @@ Stephen Miller replaces Susie Wiles as White House Chief of Staff on November 9,
 
 **→ [Read the report](reports/REPORT.md)** (one page) · [Supporting analyses](reports/supporting-analyses.md)
 
+**New: [How the press judged each Trump chief of staff](reports/press-stance.md).** A stance analysis of 562 CNN, NBC News and Washington Examiner articles. Wiles was the best treated; Priebus, Meadows and Mulvaney were judged unfavorably; Kelly too, despite his "adult in the room" reputation.
+
 ## What's here
 
 | Path | Contents |
