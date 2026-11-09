@@ -2,3 +2,7 @@ __pycache__/
 *.pyc
 .pytest_cache/
 data/raw/
+data/press/sm/
+data/press/txt/
+data/press/gd/
+data/press/sentences.csv
